@@ -4,4 +4,10 @@ from django.http import HttpResponse
 
 
 def home(request):
-    return render(request, 'leo\\login.html')
+    return render(request, 'leo\login.html')
+
+def footer(request):
+    return render(request, 'leo\\footer.html')
+
+def header(request):
+    return render(request, 'leo\\Header.html')
