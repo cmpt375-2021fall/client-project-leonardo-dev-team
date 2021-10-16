@@ -1,13 +1,42 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+
+#register form
+from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponse
+
 # Create your views here.
 
+def index(request):
+    context = {
 
-def home(request):
-    return render(request, 'leo\login.html')
+    }
+    return render(request, 'dashboard.html', context)
 
-def footer(request):
-    return render(request, 'leo\\footer.html')
+#Register page adds to admin user if valid and saves form
+def registerPage(request):
+    form = UserCreationForm()
+
+    #processes form
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+
+    context = {
+    'form': form
+    }
+    return render(request, 'register.html', context)
+
+#Login page (not yet implemented)
+def loginPage(request):
+    context = {
+
+    }
+    return render(request, 'login.html', context)
+
 
 def header(request):
-    return render(request, 'leo\\Header.html')
+    context = {
+
+    }
+    return render(request, 'Header.html', context)
