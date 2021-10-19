@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'leo/header.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'leo/footer.css' %}">
+</head>
+<body>
+    <header>
+        <div class = "topnav">
+            <img class = "img" style="display: inline-block;" src="{% static "leo/images/Logo.png" %}">
+            <div class = "topnav-right">
+                <a style="display: inline-block;">Newsletter</a>
+                <a style="display: inline-block;">Calendar</a>
+                <a style="display: inline-block;">Exclusive Content</a>
+                <a style="display: inline-block;">Account</a>
+            </div>
+        </div>
+    </header>
+        {% block content %}{% endblock %}
+    <footer>
+        <div class = "footernav">
+            <h4>Home</h4>
+            <h4>Newslettter</h4>
+            <h4>Calendar</h4>
+            <h4>Exclusive Content</h4>
+            <h4>Account</h4>
+        </div>
+    </footer>
+</body>
+</html>

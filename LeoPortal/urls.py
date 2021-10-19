@@ -28,7 +28,6 @@ urlpatterns = [
     path('', views.index, name ='index'),
     path('admin/', admin.site.urls),
     path('header/', views.header, name = 'header'),
-
-
+    path('footer/', views.footer, name = 'footer'),
 
 ]
