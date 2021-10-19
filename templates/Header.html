@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <title>Header</title>
     {% load static %}
-        <link rel="stylesheet" href="{% static 'leo/application.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'leo/header.css' %}">
 </head>
 <body>
-    <div>
-        <img src="">
-        <h3 style="display: inline-block;">Newsletter</h3>
-        <h3 style="display: inline-block;">Calendar</h3>
-        <h3 style="display: inline-block;">Exclusive Content</h3>
-        <h3 style="display: inline-block;">Account</h3>
+    <div class = "topnav">
+        <img class = "img" style="display: inline-block;" src="{% static "leo/images/Logo.png" %}">
+        <div class = "topnav-right">
+            <a style="display: inline-block;">Newsletter</a>
+            <a style="display: inline-block;">Calendar</a>
+            <a style="display: inline-block;">Exclusive Content</a>
+            <a style="display: inline-block;">Account</a>
+        </div>
     </div>
 </body>
 </html>
