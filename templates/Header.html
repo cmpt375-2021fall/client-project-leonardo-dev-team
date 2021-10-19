@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Header</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'leo/header.css' %}">
+</head>
+<body>
+    <div class = "topnav">
+        <img class = "img" style="display: inline-block;" src="{% static "leo/images/Logo.png" %}">
+        <div class = "topnav-right">
+            <a style="display: inline-block;">Newsletter</a>
+            <a style="display: inline-block;">Calendar</a>
+            <a style="display: inline-block;">Exclusive Content</a>
+            <a style="display: inline-block;">Account</a>
+        </div>
+    </div>
+</body>
+</html>
