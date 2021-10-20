@@ -1,3 +1,46 @@
-html{
-    background-color: #a9e5bb;
+.card {
+  display: inline-block;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+
+/* Add rounded corners to the top left and the top right corner of the image */
+
+
+img{
+  border-radius: 5px 5px 0 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* On mouse-over, add a deeper shadow */
+.container:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.calblock{
+  background-color: #76C4D5;
+}
+
+
+/* Add some padding inside the card container */
+.container {
+  position: relative;
+  height: 200px;
+  width: 200px;
+  background: #f2f2f2;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 0 20px 8px #d0d0d0;
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+.outer{
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }

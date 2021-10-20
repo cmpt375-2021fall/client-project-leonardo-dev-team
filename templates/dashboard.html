@@ -1,18 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Header</title>
-    {% load static %}
-        <link rel="stylesheet" href="{% static 'leo/application.css' %}"/>
-</head>
-<body>
-    <div>
-        <img src="">
-        <h3 style="display: inline-block;">Newsletter</h3>
-        <h3 style="display: inline-block;">Calendar</h3>
-        <h3 style="display: inline-block;">Exclusive Content</h3>
-        <h3 style="display: inline-block;">Account</h3>
-    </div>
-</body>
-</html>
+{% extends "base.html" %}
+
+
+    {% block content %}
+
+        {% load static %}
+        <div class="outer">
+            <div class="card">
+                <a href="newsletter/" class="container blockLink">
+                    <img class ="smallimg" style="height:150px; width:auto; margin-top: 25px;" src="{% static "leo/images/Newsletter.png" %}">
+
+                </a>
+                <h3 style="text-align: center;">Newsletter</h3>
+            </div>
+            <div class="card">
+                <a href="calendar/" class="container blockLink">
+                    <img class ="smallimg" style="height:150px; width:auto; margin-top: 25px;" src="{% static "leo/images/Calendar (1).png" %}">
+
+                </a>
+                <h3 style="text-align: center;">Calendar</h3>
+            </div>
+            <div></div>
+            <div class="card">
+                <a href="newsletter/" class="container blockLink">
+                    <img class ="smallimg" style="height:150px; width:auto; margin-top: 25px;" src="{% static "leo/images/Asset 8.png" %}">
+
+                </a>
+                <h3 style="text-align: center;">Exclusive content</h3>
+            </div>
+            <div class="card">
+                <a href="calendar/" class="container blockLink">
+                    <img class ="smallimg" style="height:150px; width:auto; margin-top: 25px;" src="{% static "leo/images/Asset 11.png" %}">
+
+                </a>
+                <h3 style="text-align: center;">Account</h3>
+            </div>
+        </div>
+
+
+    {% endblock %}
