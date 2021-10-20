@@ -5,30 +5,35 @@
 
         {% load static %}
         <div class="outer">
-             <a href="header/" class="container blockLink">
-                <img class ="smallimg" style="width:90%" src="{% static "leo/images/Asset 11.png" %}">
-                <div>
-                    <h3 style="text-align: center;">Account</h3>
-                </div>
-            </a>
-            <a href="header/" class="container blockLink">
-                <img class ="smallimg" style="width:90%" src="{% static "leo/images/Newsletter.png" %}">
-                <div>
-                    <h3 style="text-align: center;">Newsletter</h3>
-                </div>
-            </a>
-            <a href="header/" class="container blockLink">
-                <img class ="smallimg" style="width:90%" src="{% static "leo/images/Calendar (1).png" %}">
-                <div>
-                    <h3 style="text-align: center;">Calendar</h3>
-                </div>
-            </a>
-            <a href="header/" class="container blockLink">
-                <img class ="smallimg" style="width:90%" src="{% static "leo/images/Asset 8.png" %}">
-                <div>
-                    <h3 style="text-align: center;">Exclusive Content</h3>
-                </div>
-            </a>
+            <div class="card">
+                <a href="newsletter/" class="container blockLink">
+                    <img class ="smallimg" style="height:150px; width:auto; margin-top: 25px;" src="{% static "leo/images/Newsletter.png" %}">
+
+                </a>
+                <h3 style="text-align: center;">Newsletter</h3>
+            </div>
+            <div class="card">
+                <a href="calendar/" class="container blockLink">
+                    <img class ="smallimg" style="height:150px; width:auto; margin-top: 25px;" src="{% static "leo/images/Calendar (1).png" %}">
+
+                </a>
+                <h3 style="text-align: center;">Calendar</h3>
+            </div>
+            <div></div>
+            <div class="card">
+                <a href="header/" class="container blockLink">
+                    <img class ="smallimg" style="height:150px; width:auto; margin-top: 25px;" src="{% static "leo/images/Asset 8.png" %}">
+
+                </a>
+                <h3 style="text-align: center;">Exclusive content</h3>
+            </div>
+            <div class="card">
+                <a href="header/" class="container blockLink">
+                    <img class ="smallimg" style="height:150px; width:auto; margin-top: 25px;" src="{% static "leo/images/Asset 11.png" %}">
+
+                </a>
+                <h3 style="text-align: center;">Account</h3>
+            </div>
         </div>
 
 

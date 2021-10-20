@@ -34,6 +34,13 @@ def loginPage(request):
     }
     return render(request, 'login.html', context)
 
+def newsletter(request):
+    context = {}
+    return render(request, 'newsletter.html', context)
+
+def calendar(request):
+    context = {}
+    return render(request, 'calendar.html', context)
 
 def header(request):
     context = {
