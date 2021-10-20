@@ -1,19 +1,35 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Leonardo Lounge</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'leo/header.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'leo/footer.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'leo/application.css' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'leo/images/Asset 11.png' %}"/>
 
-
-    {% block content %}
-
-        {% load static %}
+</head>
+<body style = "background-color: #C3C6C8; margin: 0;">
+    <header>
+        <div class = "topnav">
+        <div>
+            <a href="{% url 'index' %}">
+                <img style="height: 200px; width: auto; margin-bottom: 25px" src="{% static "leo/images/Logo.png" %}">
+            </a>
+        </div>
+    </div>
+    </header>
         <div class="outer">
             <div class="card">
-                <a href="newsletter/" class="container blockLink">
+                <a href = "{% url 'newsletter' %}"class="container blockLink">
                     <img class ="smallimg" style="height:150px; width:auto; margin-top: 25px;" src="{% static "leo/images/Newsletter.png" %}">
 
                 </a>
                 <h3 style="text-align: center;">Newsletter</h3>
             </div>
             <div class="card">
-                <a href="calendar/" class="container blockLink">
+                <a href = "{% url 'calendar' %}" class="container blockLink">
                     <img class ="smallimg" style="height:150px; width:auto; margin-top: 25px;" src="{% static "leo/images/Calendar (1).png" %}">
 
                 </a>
@@ -21,20 +37,29 @@
             </div>
             <div></div>
             <div class="card">
-                <a href="newsletter/" class="container blockLink">
+                <a class="container blockLink">
                     <img class ="smallimg" style="height:150px; width:auto; margin-top: 25px;" src="{% static "leo/images/Asset 8.png" %}">
 
                 </a>
                 <h3 style="text-align: center;">Exclusive content</h3>
             </div>
             <div class="card">
-                <a href="calendar/" class="container blockLink">
-                    <img class ="smallimg" style="height:150px; width:auto; margin-top: 25px;" src="{% static "leo/images/Asset 11.png" %}">
+                <a class="container blockLink">
+                    <img class ="smallimg" style="height:150px; width:auto; margin-top: 25px;" src="{% static "leo/images/Chair.png" %}">
 
                 </a>
                 <h3 style="text-align: center;">Account</h3>
             </div>
         </div>
 
-
-    {% endblock %}
+    <footer>
+        <div class = "footernav">
+            <h4>Home</h4>
+            <h4>Newslettter</h4>
+            <h4>Calendar</h4>
+            <h4>Exclusive Content</h4>
+            <h4>Account</h4>
+        </div>
+    </footer>
+</body>
+</html>

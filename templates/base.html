@@ -10,17 +10,21 @@
     <link rel="shortcut icon" type="image/png" href="{% static 'leo/images/Asset 11.png' %}"/>
 
 </head>
-<body style = "background-color: #C3C6C8;">
+<body style = "background-color: #C3C6C8; margin: 0;">
     <header>
         <div class = "topnav">
-            <img class = "img" style="display: inline-block;" src="{% static "leo/images/Asset 11.png" %}">
-            <div class = "topnav-right">
-                <a style="display: inline-block;">Newsletter</a>
-                <a style="display: inline-block;">Calendar</a>
-                <a style="display: inline-block;">Exclusive Content</a>
-                <a style="display: inline-block;">Account</a>
-            </div>
+        <div style="display: inline-block; margin-right: 25px">
+            <a href="{% url 'index' %}" style="margin: 0">
+                <img class ="logo-image" src="{% static "leo/images/Logo.png" %}">
+            </a>
         </div>
+        <div class = "topnav-right">
+            <a style="display: inline-block; font-weight: bold;">Account</a>
+            <a href = "{% url 'newsletter' %}" style="display: inline-block; font-weight: bold;">Newsletter</a>
+            <a href = "{% url 'calendar' %}" style="display: inline-block; font-weight: bold;">Calendar</a>
+            <a style="display: inline-block; font-weight: bold;">Exclusive Content</a>
+        </div>
+    </div>
     </header>
         {% block content %}
 
