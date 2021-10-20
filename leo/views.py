@@ -10,7 +10,7 @@ def index(request):
     context = {
 
     }
-    return render(request, 'base.html', context)
+    return render(request, 'dashboard.html', context)
 
 #Register page adds to admin user if valid and saves form
 def registerPage(request):

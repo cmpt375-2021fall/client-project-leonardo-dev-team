@@ -6,11 +6,12 @@
     {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'leo/header.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'leo/footer.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'leo/application.css' %}">
 </head>
 <body>
     <header>
         <div class = "topnav">
-            <img class = "img" style="display: inline-block;" src="{% static "leo/images/Logo.png" %}">
+            <img class = "img" style="display: inline-block;" src="{% static "leo/images/Asset 11.png" %}">
             <div class = "topnav-right">
                 <a style="display: inline-block;">Newsletter</a>
                 <a style="display: inline-block;">Calendar</a>
@@ -19,7 +20,9 @@
             </div>
         </div>
     </header>
-        {% block content %}{% endblock %}
+        {% block content %}
+
+        {% endblock %}
     <footer>
         <div class = "footernav">
             <h4>Home</h4>
