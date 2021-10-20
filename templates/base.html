@@ -20,8 +20,10 @@
         </div>
         <div class = "topnav-right">
             <a style="display: inline-block; font-weight: bold;">Account</a>
-            <a href = "{% url 'newsletter' %}" style="display: inline-block; font-weight: bold;">Newsletter</a>
-            <a href = "{% url 'calendar' %}" style="display: inline-block; font-weight: bold;">Calendar</a>
+            {% url 'newsletter' as url %}
+            <a href="{{ url }}"{% if request.path == url %} class="active"{% endif %} style="display: inline-block; font-weight: bold;">Newsletter</a>
+            {% url 'calendar' as url2 %}
+            <a href="{{ url2 }}"{% if request.path == url2 %} class="active"{% endif %} style="display: inline-block; font-weight: bold;">Calendar</a>
             <a style="display: inline-block; font-weight: bold;">Exclusive Content</a>
         </div>
     </div>
