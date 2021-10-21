@@ -1,1 +1,1 @@
-web: gunicorn LeoPortal.wsgi --log-file -
+web: gunicorn leo.wsgi --log-file -
