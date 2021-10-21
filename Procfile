@@ -1,1 +1,1 @@
-web: gunicorn client-project-leonardo-dev-team.wsgi --log-file -
+web: gunicorn LeoPortal.wsgi --log-file -
