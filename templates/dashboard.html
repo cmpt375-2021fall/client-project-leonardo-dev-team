@@ -20,11 +20,11 @@
     <header>
         <div class = "topnav">
         <div>
-            <a href="{% url 'index' %}">
+            <a href="{% url 'dashboard' %}">
                 <img style="height: 200px; width: auto; margin-bottom: 25px" src="{% static "leo/images/Logo.png" %}">
             </a>
         </div>
-    </div>
+        </div>
     </header>
         <div class="outer">
             <div class="card">
@@ -59,13 +59,13 @@
         </div>
 
     <footer>
-        <div class = "footernav">
-            <h4>Home</h4>
-            <h4>Newslettter</h4>
-            <h4>Calendar</h4>
-            <h4>Exclusive Content</h4>
-            <h4>Account</h4>
-        </div>
+       <body style="margin: 0;">
+            <div class = "footernav">
+                <hr style="margin-bottom: 15px">
+                <a href="#">Back to top</a>
+                <div style="margin-top: 50px"></div>
+            </div>
+        </body>
     </footer>
 </body>
 </html>

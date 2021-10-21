@@ -10,9 +10,16 @@ def index(request):
     context = {
 
     }
+    return render(request, 'login.html', context)
+
+def dashboard(request):
+    context = {
+
+    }
     return render(request, 'dashboard.html', context)
 
 #Register page adds to admin user if valid and saves form
+'''
 def registerPage(request):
     form = UserCreationForm()
 
@@ -26,11 +33,7 @@ def registerPage(request):
     'form': form
     }
     return render(request, 'register.html', context)
-
-#Login page (not yet implemented)
-def loginPage(request):
-    context = {}
-    return render(request, 'login.html', context)
+'''
 
 def newsletter(request):
     context = {}
@@ -39,7 +42,7 @@ def newsletter(request):
 def calendar(request):
     context = {}
     return render(request, 'calendar.html', context)
-
+'''
 def header(request):
     context = {
 
@@ -49,3 +52,4 @@ def header(request):
 def footer(request):
     context = {}
     return render(request, 'footer.html', context)
+'''

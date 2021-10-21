@@ -8,12 +8,16 @@
     <link rel="stylesheet" type="text/css" href="{% static 'leo/footer.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'leo/application.css' %}">
     <link rel="shortcut icon" type="image/png" href="{% static 'leo/images/Asset 11.png' %}"/>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Red+Hat+Text&display=swap">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300&display=swap">
     <style>
       body {
         font-family: 'Red Hat Text', regular;
       }
       p{
-        font-family: 'Saira Extra Condensed', regular;
+          font-family: 'Red Hat Display', regular;
       }
     </style>
 </head>
@@ -21,17 +25,17 @@
     <header>
         <div class = "topnav">
         <div style="display: inline-block; margin-right: 25px">
-            <a href="{% url 'index' %}" style="margin: 0">
+            <a href="{% url 'dashboard' %}" style="margin: 0">
                 <img class ="logo-image" src="{% static "leo/images/Logo.png" %}">
             </a>
         </div>
         <div class = "topnav-right">
             <a style="display: inline-block; font-weight: bold;">Account</a>
-            {% url 'newsletter' as url %}
-            <a href="{{ url }}"{% if request.path == url %} class="active"{% endif %} style="display: inline-block; font-weight: bold;">Newsletter</a>
+            <a style="display: inline-block; font-weight: bold;">Exclusive Content</a>
             {% url 'calendar' as url2 %}
             <a href="{{ url2 }}"{% if request.path == url2 %} class="active"{% endif %} style="display: inline-block; font-weight: bold;">Calendar</a>
-            <a style="display: inline-block; font-weight: bold;">Exclusive Content</a>
+            {% url 'newsletter' as url %}
+            <a href="{{ url }}"{% if request.path == url %} class="active"{% endif %} style="display: inline-block; font-weight: bold;">Newsletter</a>
         </div>
     </div>
     </header>
@@ -39,13 +43,13 @@
 
         {% endblock %}
     <footer>
-        <div class = "footernav">
-            <h4>Home</h4>
-            <h4>Newslettter</h4>
-            <h4>Calendar</h4>
-            <h4>Exclusive Content</h4>
-            <h4>Account</h4>
-        </div>
+       <body style="margin: 0;">
+            <div class = "footernav">
+                <hr style="margin-bottom: 15px">
+                <a href="#">Back to top</a>
+                <div style="margin-top: 50px"></div>
+            </div>
+        </body>
     </footer>
 </body>
 </html>

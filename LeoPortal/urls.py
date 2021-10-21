@@ -22,13 +22,12 @@ import leo.views as views
 
 urlpatterns = [
     #login
-    path('register/', views.registerPage, name='register'),
-    path('login/', views.loginPage, name='login'),
+    #path('register/', views.registerPage, name='register'),
+    #path('login/', views.loginPage, name='login'),
 
     path('', views.index, name ='index'),
+    path('dashboard/', views.dashboard, name = 'dashboard'),
     path('admin/', admin.site.urls),
-    path('header/', views.header, name = 'header'),
-    path('footer/', views.footer, name = 'footer'),
     path('newsletter/', views.newsletter, name = 'newsletter'),
     path('calendar/', views.calendar, name = 'calendar'),
 ]
