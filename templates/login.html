@@ -1,65 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Leonardo Lounge</title>
+{% extends "base.html" %}
+{% load crispy_forms_filters %}
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'leo/header.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'leo/footer.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'leo/login.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'leo/application.css' %}">
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Red+Hat+Text&display=swap">
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300&display=swap">
-    <style>
-      body {
-        font-family: 'Red Hat Text', regular;
-      }
-      p{
-          font-family: 'Red Hat Display', regular;
-      }
-    </style>
 
-</head>
-<body style = "background-color: #C3C6C8; margin: 0;">
-    <header>
-        <div class = "topnav">
-        <div>
-            <a>
-                <img style="height: 200px; width: auto; margin-bottom: 25px" src="{% static "leo/images/Logo.png" %}">
-            </a>
-        </div>
-        </div>
-    </header>
+{% block content %}
 
-                <div class="login" style="margin-top: 100px">
-
-                    <h2 class="login-header">Log in</h2>
-
-                    <form class="login-container" action="dashboard/">
-                        <p><input type="username" placeholder="Username"></p>
-                        <p><input type="password" placeholder="Password"></p>
-                        <p><input type="submit" value="Log in"></p>
-                    </form>
-                </div>
-                <div>
-                    <img class="img2" src="{% static "leo/images/Couch.png" %}">
-                </div>
+{% load crispy_forms_tags %}
+<div class="container" style="height: initial">
+  <h1>Login</h1>
+  <form method="POST">
+    {% csrf_token %}
+    {{ login_form|crispy }}
+    <button class="btn btn-primary" type="submit">Login</button>
+  </form>
+  <p class="text-center">Don't have an account? <a href="/register">Create an account</a>.</p>
+</div>
 
 
-    <footer>
-       <body style="margin: 0;">
-            <div class = "footernav">
-                <hr style="margin-bottom: 15px">
-                <a href="#">Back to top</a>
-                <div style="margin-top: 50px"></div>
-            </div>
-        </body>
-    </footer>
-</body>
-</html>
-
+<img src="{% static "leo/images/Couch.png" %}" style="object-fit: cover;width: 100%">
+{% endblock %}
 
 
 
