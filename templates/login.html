@@ -1,2 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Leonardo Lounge</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'leo/header.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'leo/login.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'leo/application.css' %}">
 
-<h3> login </h3>
+    <link rel="shortcut icon" type="image/png" href="{% static 'leo/images/Asset 11.png' %}"/>
+
+</head>
+<body style = "background-color: #C3C6C8;">
+        <header>
+        <div class = "topnav">
+        <div style="display: inline-block; margin-right: 25px">
+            <a href="{% url 'index' %}" style="margin: 0">
+                <img class ="logo-image" src="{% static "leo/images/Logo.png" %}">
+            </a>
+        </div>
+        <div class = "topnav-right">
+            <a style="display: inline-block; font-weight: bold;">Account</a>
+            {% url 'newsletter' as url %}
+            <a href="{{ url }}"{% if request.path == url %} class="active"{% endif %} style="display: inline-block; font-weight: bold;">Newsletter</a>
+            {% url 'calendar' as url2 %}
+            <a href="{{ url2 }}"{% if request.path == url2 %} class="active"{% endif %} style="display: inline-block; font-weight: bold;">Calendar</a>
+            <a style="display: inline-block; font-weight: bold;">Exclusive Content</a>
+        </div>
+    </div>
+    </header>
+
+        <div class="loginOuter">
+
+            <div class="loginBox">
+
+                <img class ="imgg" src="{% static "leo/images/Tv.png" %}">
+                <h3 style="text-align: center"> Username </h3>
+                <h3 style="text-align: center"> Password </h3>
+                <h3 style="text-align: center">
+                    <a class="Content_header" href="{% url 'newsletter' %}"> login
+                    </a>
+                </h3>
+
+                <img class ="img2" src="{% static "leo/images/Couch.png" %}">
+
+
+            </div>
+
+       </div>
+
+
+</body>
+</html>
+
+
+
+

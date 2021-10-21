@@ -29,9 +29,7 @@ def registerPage(request):
 
 #Login page (not yet implemented)
 def loginPage(request):
-    context = {
-
-    }
+    context = {}
     return render(request, 'login.html', context)
 
 def newsletter(request):
