@@ -53,13 +53,12 @@ def register_request(request):
         form = NewUserForm(request.POST)
         if form.is_valid():
             user = form.save()
-            login(request, user)
+            login(request)
             messages.success(request, "Registration successful.")
-            return redirect("dashboard")
+            return redirect("login_request")
         messages.error(request, "Unsuccessful registration. Invalid information.")
     form = NewUserForm()
     return render(request=request, template_name="register.html", context={"register_form": form})
-
 
 def login_request(request):
     if request.method == "POST":
