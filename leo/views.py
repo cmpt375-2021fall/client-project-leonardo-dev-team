@@ -35,6 +35,10 @@ def calendar(request):
     context = {}
     return render(request, 'calendar.html', context)
 
+def account(request):
+    context = {}
+    return render(request, 'account.html', context)
+
 
 '''
 def header(request):

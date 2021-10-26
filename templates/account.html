@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+
+    {% block content %}
+
+        {% load static %}
+        <div style="display: flex;">
+            <div style="margin-right: 25px; margin-left: 25px; margin-top: 100px">
+                <img style="height:150px; width:auto; margin-top: 25px;" vertical-align="left" src="{% static "leo/images/Chair.png" %}">
+            </div>
+
+            <div style="flex-grow: 1; margin-left: 15px; margin-top: 50px; margin-right: 110px">
+                <div>
+                    <h1><b>Account</b></h1>
+                </div>
+
+                <hr>
+
+                <div>
+                    <h3>Your Profile</h3>
+                    <hr style="color: white">
+                    <h4>Account Number</h4>
+                    <p>1234567</p>
+                    <hr style="color: white">
+                    <h4>Email</h4>
+                    <p>user@test.com</p>
+                    <hr style="color: white">
+                    <h4>Password</h4>
+                    <p>**********</p>
+                </div>
+
+                <hr>
+
+                <div>
+                    <h3>Your Membership</h3>
+                    <a>View other membership options</a>
+                </div>
+
+                <hr>
+
+                <div>
+                    <h3>Your Lounge</h3>
+                    <div>
+                        <img style="height:50px; width:auto;" src="{% static "leo/images/Chair.png" %}">
+                        <a href="newsletter/">Newsletter</a>
+                        <p>Some Description</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div style="margin-bottom: 100px"></div>
+
+    {% endblock %}

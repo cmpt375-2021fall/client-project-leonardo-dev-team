@@ -27,5 +27,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('newsletter/', views.newsletter, name = 'newsletter'),
     path('calendar/', views.calendar, name = 'calendar'),
-
+    path('account/', views.account, name = 'account')
 ]
