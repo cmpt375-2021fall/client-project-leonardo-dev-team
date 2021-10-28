@@ -31,8 +31,10 @@
             </a>
         </div>
         <div class = "topnav-right">
-            <a style="display: inline-block; font-weight: bold;">Account</a>
-            <a style="display: inline-block; font-weight: bold;">Exclusive Content</a>
+            {% url 'account' as url4 %}
+            <a href="{{ url4 }}"{% if request.path == url4 %} class="active"{% endif %} style="display: inline-block; font-weight: bold;">My Membership</a>
+            {% url 'exclusive' as url3 %}
+            <a href="{{ url3 }}"{% if request.path == url3 %} class="active"{% endif %} style="display: inline-block; font-weight: bold;">Exclusive Content</a>
             {% url 'calendar' as url2 %}
             <a href="{{ url2 }}"{% if request.path == url2 %} class="active"{% endif %} style="display: inline-block; font-weight: bold;">Calendar</a>
             {% url 'newsletter' as url %}

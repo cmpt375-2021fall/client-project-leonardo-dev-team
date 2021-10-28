@@ -39,6 +39,10 @@ def account(request):
     context = {}
     return render(request, 'account.html', context)
 
+def exclusive(request):
+    context = {}
+    return render(request, 'exclusive.html', context)
+
 
 '''
 def header(request):
