@@ -13,6 +13,7 @@ body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+
 }
 footer{
     margin-top: auto;
@@ -51,7 +52,7 @@ img{
 }
 .outer{
   text-align: center;
-  margin-top: 50px;
+  margin-top: 20rem;
   margin-bottom: 50px;
 }
 
