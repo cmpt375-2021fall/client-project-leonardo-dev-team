@@ -80,15 +80,14 @@ img{
 
 /* Changes to send to Thor*/
 .calCalender {
-  flex-grow: 1;
   position: relative;
-  margin-right: 200px;
-  margin-top: 50px;
-  background-color: #4ac1f7;
+  flex-grow: 1;
+  margin-left: 10rem;
+  margin-right: 110px;
 }
 .Calender {
   flex-grow: 1;
-  border:solid 8px #76C4D5;
+  border:solid 8px #C3C6C8;
   border-radius: 20px;
   margin-left: auto;
   margin-right: 100px;
