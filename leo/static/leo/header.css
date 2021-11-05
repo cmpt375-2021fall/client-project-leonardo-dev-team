@@ -46,13 +46,13 @@
 }
 
 /* Change the color of links on hover */
-.topnav a:hover {
+.topnav-right a:hover {
   /*background-color: #ddd;*/
   color: #76C4D5; /*change to the leo gray or blue*/
 }
 
 /* Add a color to the active/current link */
-.topnav a.active {
+.topnav-right a.active {
   color: #B687B8;
 }
 
