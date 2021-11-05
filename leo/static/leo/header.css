@@ -1,6 +1,6 @@
 /* Add a black background color to the top navigation */
 .topnav {
-    background-color: white;
+    background-color: #263746;
     overflow: hidden;
     position:fixed;
     top:0;
@@ -8,14 +8,40 @@
     z-index:100;
 }
 
+.topnavTransparent {
+    background-color: transparent;
+    overflow: hidden;
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:100;
+}
+
+#header {
+    background-color: transparent;
+    overflow: hidden;
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:100;
+    transition: ease 0.4s;
+}
+
+#navImage{
+    height: 175px;
+    width: auto;
+    margin-bottom: 25px;
+}
+
 /* Style the links inside the navigation bar */
 .topnav-right a {
   float: right;
-  color: #263746;
+  color: white;
   text-align: center;
-  padding: 65px 50px;
+  padding: 4rem;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 17px;
+    vertical-align: center;
   /*change font, make a top margin and make that part grey, change box size when hovering to smaller*/
 }
 
@@ -36,10 +62,9 @@
 }
 
  .logo-image{
-    width: 100px;
-    height: auto;
+    width: auto;
+    height: 90px;
     overflow: hidden;
-    margin-top: -6px;
-     padding: 25px 0;
+     padding: 20px 0;
      margin-left: 50px;
 }

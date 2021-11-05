@@ -16,13 +16,13 @@
       }
     </style>
 </head>
-<body style = "background-color: #C3C6C8; margin: 0;">
+<body style = "background-image:  linear-gradient(to bottom, white, white, #bde2eb, #76C4D5); margin: 0;">
     <nav>
         <header>
-            <div class = "topnav">
+            <div id = "header">
                 <div>
                     <a href="{% url 'dashboard' %}">
-                        <img style="height: 200px; width: auto; margin-bottom: 25px" src="{% static "leo/images/Logo.png" %}">
+                        <img id="navImage" src="{% static "leo/images/Logo.png" %}">
                     </a>
                 </div>
             </div>
@@ -30,15 +30,6 @@
     </nav>
 
         <div class="outer">
-
-                <div class="card">
-                    <a href = "{% url 'newsletter' %}"class="container blockLink">
-                        <img class ="smallimg" style="height:150px; width:auto; margin-top: 25px;" src="{% static "leo/images/Newsletter.png" %}">
-
-                    </a>
-                    <h3 style="text-align: center;">Newsletter</h3>
-                </div>
-
 
 
                 <div class="card">
@@ -49,9 +40,23 @@
                     <h3 style="text-align: center;">Calendar</h3>
                 </div>
 
+                <div class="card">
+                    <a href = "{% url 'account' %}" class="container blockLink">
+                        <img class ="smallimg" style="height:150px; width:auto; margin-top: 25px;" src="{% static "leo/images/Chair2.png" %}">
+
+                    </a>
+                    <h3 style="text-align: center;">My Membership</h3>
+                </div>
 
             <div></div>
 
+                <div class="card">
+                    <a href = "{% url 'newsletter' %}"class="container blockLink">
+                        <img class ="smallimg" style="height:150px; width:auto; margin-top: 25px;" src="{% static "leo/images/Newsletter.png" %}">
+
+                    </a>
+                    <h3 style="text-align: center;">Newsletter</h3>
+                </div>
 
                 <div class="card">
                     <a href = "{% url 'exclusive' %}" class="container blockLink">
@@ -63,13 +68,7 @@
 
 
 
-                <div class="card">
-                    <a href = "{% url 'account' %}" class="container blockLink">
-                        <img class ="smallimg" style="height:150px; width:auto; margin-top: 25px;" src="{% static "leo/images/Chair2.png" %}">
 
-                    </a>
-                    <h3 style="text-align: center;">My Membership</h3>
-                </div>
 
         </div>
 
@@ -82,5 +81,22 @@
             </div>
         </body>
     </footer>
+
+    <script>
+        // When the user scrolls down 50px from the top of the document, resize the header's font size
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+          if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+              document.getElementById("navImage").style.height = "100px";
+            document.getElementById("navImage").style.width = "auto";
+            document.getElementById("header").style.backgroundColor = "white";
+          } else {
+              document.getElementById("navImage").style.height = "175px";
+            document.getElementById("navImage").style.width = "auto";
+            document.getElementById("header").style.backgroundColor = "transparent";
+          }
+        }
+</script>
 </body>
 </html>

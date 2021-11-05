@@ -13,7 +13,7 @@ body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-
+    background-image:  linear-gradient(to bottom, white, white, #bde2eb, #76C4D5);
 }
 footer{
     margin-top: auto;
@@ -28,7 +28,7 @@ img{
 
 /* On mouse-over, add a deeper shadow */
 .container:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
 }
 
 .calblock{
@@ -44,7 +44,7 @@ img{
   background: #f2f2f2;
   overflow: hidden;
   border-radius: 20px;
-  box-shadow: 0 0 20px 8px #d0d0d0;
+  box-shadow: 0  8px 16px 0 rgba(0,0,0,0.1);
   display: inline-block;
   margin-left: 5px;
   margin-right: 5px;
@@ -56,3 +56,23 @@ img{
   margin-bottom: 50px;
 }
 
+.containerCard {
+  position: relative;
+  background: #76C4D5;
+  overflow: hidden;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  padding: 10px;
+}
+.containerCard p{
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.containerCard img{
+  height:100px;
+  width:auto;
+  padding: 1rem;
+}
