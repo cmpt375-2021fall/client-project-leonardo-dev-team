@@ -13,7 +13,7 @@ body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-image:  linear-gradient(to bottom, white, white, #bde2eb, #76C4D5);
+    background-image:  linear-gradient(to bottom, white, #76C4D5);
 }
 footer{
     margin-top: auto;
