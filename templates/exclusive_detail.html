@@ -10,16 +10,16 @@
             </div>
 
             <div style="flex-grow: 1; margin-left: 10rem; margin-right: 110px">
-                <h1><b>Exclusive Content</b></h1>
-                <div>
-                    {% for post in object_list %}
-                        <div>
-                            <a href="{% url 'exclusiveDetail' post.pk %}"><h3>{{ post.title }}</h3></a>
-                            <p>{{ post.post_date }} | {{ post.caption }}</p>
-                            <hr>
-                        </div>
-                    {% endfor %}
-                </div>
+                <h1>{{ post.title }}</h1>
+                <small>{{ post.post_date }}</small>
+                <hr>
+                <br>
+                {% if post.header_image %}
+                    <img src="{{ post.header_image.url }}"><br><br>
+                {% endif %}
+                <p>{{ post.body }}</p>
+                <br><br>
+                <a href="{% url 'exclusive' %}">Back</a>
             </div>
         </div>
 
