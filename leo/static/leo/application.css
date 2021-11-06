@@ -126,9 +126,50 @@ img{
   text-decoration: none;
 }
 
-.centertext{
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-60%);
-  transform: translateY(-60%);
+
+
+@media only screen and (max-width: 600px) {
+  .pic{
+    display: none;
+  }
+
+  .imgSize{
+    text-align: center;
+    width: 65%;
+    height: auto;
+  }
+
+  .vidSize{
+    text-align: center;
+    width: 65%;
+    height: auto;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .content{
+    margin-left: 10rem;
+    margin-right: 110px;
+  }
+
+  .contentImg{
+    display: inline-block;
+  }
+
+  .centertext{
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-60%);
+    transform: translateY(-60%);
+  }
+
+  .imgSize{
+    width: 200px;
+    height: auto;
+  }
+
+  .vidSize{
+    width: 200px;
+    height: auto;
+  }
 }

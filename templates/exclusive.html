@@ -4,23 +4,23 @@
     {% block content %}
 
         {% load static %}
-        <div style="display: flex; margin-top: 10rem;">
-            <div style="margin-right: 25px; margin-left: 3rem; position: fixed">
+        <div style="margin-top: 10rem;">
+            <div class = "pic" style="margin-right: 25px; margin-left: 3rem; position: fixed">
                 <img style="height:100px; width:auto; margin-top: 25px;" src="{% static "leo/images/Asset 8.png" %}">
             </div>
 
-            <div style="flex-grow: 1; margin-left: 10rem; margin-right: 110px">
+            <div class = "content">
                 <h1><b>Exclusive Content</b></h1>
                 <div>
                     {% for post in object_list %}
                         <div class="blog">
                             <a href="{% url 'exclusiveDetail' post.pk %}"><h3>{{ post.title }}</h3></a>
-                            <div style="display: inline-block;">
+                            <div class = "contentImg">
                                 {% if post.header_image %}
-                                    <img style="height: 200px; width: auto" src="{{ post.header_image.url }}">
+                                    <img class="imgSize" src="{{ post.header_image.url }}">
                                 {% endif %}
                                 {% if post.video %}
-                                    <video width="auto" height="200px" controls>
+                                    <video class="vidSize" controls>
                                         <source src="{{ post.video.url }}" type="video/mp4">
                                     </video>
                                 {% endif %}

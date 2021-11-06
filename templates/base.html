@@ -32,15 +32,22 @@
                     <img class ="logo-image" src="{% static "leo/images/Newest Logo (blue).png" %}">
                 </a>
             </div>
-            <div class = "topnav-right">
+
+            <div class = "mobile-nav">
+                <a href="javascript:void(0);" style="margin: 0" onclick="dropdown()">
+                    <img class ="dropdown" src="{% static "leo/images/Dropdown.png" %}">
+                </a>
+            </div>
+
+            <div id = "button" class = "topnav-right">
                     {% url 'account' as url4 %}
-                    <a href="{{ url4 }}"{% if request.path == url4 %} class="active"{% endif %} style="display: inline-block; font-weight: bold;">My Membership</a>
+                    <a href="{{ url4 }}"{% if request.path == url4 %} class="active"{% endif %} style="font-weight: bold;">My Membership</a>
                     {% url 'exclusive' as url3 %}
-                    <a href="{{ url3 }}"{% if request.path == url3 %} class="active"{% endif %} style="display: inline-block; font-weight: bold;">Exclusive Content</a>
+                    <a href="{{ url3 }}"{% if request.path == url3 %} class="active"{% endif %} style="font-weight: bold;">Exclusive Content</a>
                     {% url 'calendar' as url2 %}
-                    <a href="{{ url2 }}"{% if request.path == url2 %} class="active"{% endif %} style="display: inline-block; font-weight: bold;">Calendar</a>
+                    <a href="{{ url2 }}"{% if request.path == url2 %} class="active"{% endif %} style="font-weight: bold;">Calendar</a>
                     {% url 'newsletter' as url %}
-                    <a href="{{ url }}"{% if request.path == url %} class="active"{% endif %} style="display: inline-block; font-weight: bold;">Newsletter</a>
+                    <a href="{{ url }}"{% if request.path == url %} class="active"{% endif %} style="font-weight: bold;">Newsletter</a>
             </div>
         </div>
         </header>
@@ -71,6 +78,17 @@
             document.getElementById("header").style.backgroundColor = "transparent";
           }
         }
+    </script>
+    <script>
+        function dropdown() {
+          var x = document.getElementById("button");
+              if (x.style.display === "block") {
+                x.style.display = "none";
+              } else {
+                x.style.display = "block";
+                document.getElementById("header").style.backgroundColor = "white";
+              }
+            }
     </script>
 </body>
 </html>
