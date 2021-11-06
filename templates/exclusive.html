@@ -13,10 +13,29 @@
                 <h1><b>Exclusive Content</b></h1>
                 <div>
                     {% for post in object_list %}
-                        <div>
+                        <div class="blog">
                             <a href="{% url 'exclusiveDetail' post.pk %}"><h3>{{ post.title }}</h3></a>
-                            <p>{{ post.post_date }} | {{ post.caption }}</p>
-                            <hr>
+                            <div style="display: inline-block;">
+                                {% if post.header_image %}
+                                    <img style="height: 200px; width: auto" src="{{ post.header_image.url }}">
+                                {% endif %}
+                                {% if post.video %}
+                                    <video width="auto" height="200px" controls>
+                                        <source src="{{ post.video.url }}" type="video/mp4">
+                                    </video>
+                                {% endif %}
+                            </div>
+                            <div class = "centertext" style="display: inline-block; margin-left: 1em;">
+                                <p>{{ post.post_date }}</p>
+                                <p>{{ post.caption }}</p>
+                            </div>
+                            <br>
+                            <br>
+                            <div>
+                                <a href="{% url 'exclusiveDetail' post.pk %}"><div style="background-color: white; padding: 5px;">
+                                <p style="margin-left: 1em">Click here to read full article</p>
+                            </div></a>
+                            </div>
                         </div>
                     {% endfor %}
                 </div>

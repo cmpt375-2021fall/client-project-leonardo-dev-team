@@ -15,7 +15,12 @@
                 <hr>
                 <br>
                 {% if post.header_image %}
-                    <img src="{{ post.header_image.url }}"><br><br>
+                    <img style="height: 500px; width: auto" src="{{ post.header_image.url }}"><br><br>
+                {% endif %}
+                {% if post.video %}
+                    <video width="auto" height="500px" controls>
+                        <source src="{{ post.video.url }}" type="video/mp4">
+                    </video>
                 {% endif %}
                 <p>{{ post.body }}</p>
                 <br><br>

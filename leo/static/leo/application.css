@@ -94,3 +94,41 @@ img{
   width: 1000px;
 
 }
+
+.blog{
+  position: relative;
+}
+
+.blog a:link{
+  color: #D7006D;
+  text-decoration: none;
+}
+
+.blog a:visited{
+  color: #8C4B9D;
+  text-decoration: none;
+}
+
+.blog a p:visited{
+  color: #D7006D;
+  text-decoration: none;
+}
+
+.blog a:hover{
+  text-decoration: none;
+}
+
+.blog a p:hover, .blog a h3:hover{
+  text-decoration: underline;
+}
+
+.blog a:active{
+  text-decoration: none;
+}
+
+.centertext{
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-60%);
+  transform: translateY(-60%);
+}

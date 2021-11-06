@@ -48,7 +48,7 @@ def exclusive(request):
 class exclusiveView(ListView):
     model = Post
     template_name = 'exclusive.html'
-    ordering = ['-post_date']
+    ordering = ['-id']
 
 class exclusiveDetailView(DetailView):
     model = Post
