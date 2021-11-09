@@ -17,6 +17,9 @@ from django.contrib import admin
 from django.urls import path
 
 import leo.views as views
+from leo.views import exclusiveView, exclusiveDetailView
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     #login
@@ -27,5 +30,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('newsletter/', views.newsletter, name = 'newsletter'),
     path('calendar/', views.calendar, name = 'calendar'),
-
-]
+    path('account/', views.account, name = 'account'),
+    #path('exclusive_content/', views.exclusive, name = 'exclusive'),
+    path('exclusive_content', exclusiveView.as_view(), name = 'exclusive'),
+    path('exclusive/<int:pk>', exclusiveDetailView.as_view(), name = 'exclusiveDetail'),
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
