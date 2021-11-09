@@ -130,29 +130,117 @@ img{
 
 @media only screen and (max-width: 600px) {
 
-  .content{
+  .content {
     margin-left: 1rem;
     margin-right: 1rem;
   }
 
-  .title{
+  .title {
     margin-left: 1rem;
   }
 
-  .pic{
+  .pic {
     display: none;
   }
 
-  .imgSize{
+  .imgSize {
     text-align: center;
     width: 90%;
     height: auto;
   }
 
-  .vidSize{
+  .vidSize {
     width: 90%;
     height: auto;
   }
+
+  .calenderContainer img{
+  width:50%;
+  margin-top:5px;
+  margin-left:auto;
+  text-align:left;
+  }
+  .Calender{
+  flex-grow:1;
+  border:solid 2px #76C4D5;
+  border-radius:3%;
+  height:200%;
+  width:auto;
+  frameborder:50;
+  scrolling:no;
+  }
+  .calCalender{
+  position:relative;
+  margin-right:10%;
+  /*position:relative;*/
+  }
+  .calCalender h1{
+  font-size:22px;
+  }
+}
+
+
+
+
+ @media only screen and (min-width: 601px){
+    /*.calenderContainer {
+      margin-right: 25px;
+      margin-left:25px;
+    }*/
+     .calenderContainer img {
+         height: 100px;
+         width: auto;
+         margin-top: 5px;
+         margin-left: 5px;
+     }
+    .Calender {
+      flex-grow: 1;
+      border: solid 2px #76C4D5;
+      border-radius: 20px;
+      margin-left: auto;
+      margin-right: 100px;
+      height: 600px;
+      width: 200%;
+      frameborder: 0;
+      scrolling: no;
+    }
+    .calCalender{
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+   .calCalender h1{
+    /*position: relative;*/
+  }
+}
+
+  @media only screen and (max-width: 600px){
+
+      .calenderContainer img {
+         width: 50%;
+         margin-top: 5px;
+         margin-left: auto;
+        text-align: left;
+    }
+
+
+    .Calender {
+      flex-grow: 1;
+
+      border: solid 2px #76C4D5;
+      border-radius: 3%;
+      height: 200%;
+      width: auto;
+      frameborder: 50;
+      scrolling: no;
+    }
+     .calCalender {
+            position: relative;
+         margin-right: 10%;
+      /*position: relative;*/
+    }
+     .calCalender h1 {
+         font-size: 22px;
+     }
 
   .imgSizeDetail{
     text-align: center;
@@ -210,4 +298,34 @@ img{
   .mobile-vid{
     text-align: center;
   }
+
+      /*.calenderContainer{
+    margin-right:25px;
+    margin-left:25px;
+    }*/
+    .calenderContainerimg{
+    height:100px;
+    width:auto;
+    margin-top:5px;
+    margin-left:5px;
+    }
+    .Calender{
+    flex-grow:1;
+    border:solid 2px #76C4D5;
+    border-radius:20px;
+    margin-left:auto;
+    margin-right:100px;
+    height:600px;
+    width:200%;
+    frameborder:0;
+    scrolling:no;
+    }
+    .calCalender{
+    margin-left:10px;
+    margin-top:5px;
+    }
+    .calCalender h1{
+    /*position:relative;*/
+    }
+
 }
