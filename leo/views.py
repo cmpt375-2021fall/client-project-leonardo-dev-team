@@ -36,13 +36,13 @@ def calendar(request):
     return render(request, 'calendar.html', context)
 
 
-'''
+
 def header(request):
     context = {
 
     }
     return render(request, 'Header.html', context)
-
+'''
 def footer(request):
     context = {}
     return render(request, 'footer.html', context)
@@ -90,3 +90,8 @@ def homepage(request):
         messages.error(request, "Unsuccessful registration. Invalid information.")
     form = NewUserForm()
     return render(request=request, template_name="register.html", context={"register_form": form})
+
+#Raven's experimental nav drop down bar:
+def showlist(request):
+    results = City.objects.all
+    return render(request, "home.html", {"showcity": results})
