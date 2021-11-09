@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import NewUserForm
 from django.contrib.auth import login
 from django.contrib import messages
-
+from django.views.generic import ListView, DetailView
 
 from django.contrib.auth import authenticate
 from django.shortcuts import render, redirect
@@ -13,6 +13,8 @@ from django.http import HttpResponse
 
 
 # Create your views here.
+from .models import Post
+
 
 def login(request):
     print(request.method)
@@ -35,14 +37,29 @@ def calendar(request):
     context = {}
     return render(request, 'calendar.html', context)
 
+def account(request):
+    context = {}
+    return render(request, 'account.html', context)
 
+def exclusive(request):
+    context = {}
+    return render(request, 'exclusive.html', context)
 
+class exclusiveView(ListView):
+    model = Post
+    template_name = 'exclusive.html'
+    ordering = ['-id']
+
+class exclusiveDetailView(DetailView):
+    model = Post
+    template_name = 'exclusive_detail.html'
+'''
 def header(request):
     context = {
 
     }
     return render(request, 'Header.html', context)
-'''
+
 def footer(request):
     context = {}
     return render(request, 'footer.html', context)
@@ -90,8 +107,3 @@ def homepage(request):
         messages.error(request, "Unsuccessful registration. Invalid information.")
     form = NewUserForm()
     return render(request=request, template_name="register.html", context={"register_form": form})
-
-#Raven's experimental nav drop down bar:
-def showlist(request):
-    results = City.objects.all
-    return render(request, "home.html", {"showcity": results})
