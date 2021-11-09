@@ -1,3 +1,4 @@
+
 .card {
   display: inline-block;
   margin-left: 30px;
@@ -177,9 +178,6 @@ img{
   font-size:22px;
   }
 }
-
-
-
 
  @media only screen and (min-width: 601px){
     /*.calenderContainer {
