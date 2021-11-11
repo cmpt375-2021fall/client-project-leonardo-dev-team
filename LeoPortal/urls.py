@@ -30,8 +30,9 @@ urlpatterns = [
     # path('', views.login_request),
     # path('accounts/login/', auth_views.auth_login.,{'authentication_form': CustomAuthForm}, name='login'),
     path('', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
-    # path('accounts/', include('allauth.urls')),
-      path('accounts/', include('allauth.urls')),
+    path('register/', auth_views.SignupView.as_view(template_name='registration/register.html'), name='register'),
+    path('accounts/', include('allauth.urls')),
+    #   path('accounts/', include('allauth.urls')),
 
                   # path('accounts/', include('django.contrib.auth.urls'),  kwargs={"authentication_form":CustomAuthForm}),
     # path('login/', auth_views.LoginView.as_view(), name='login'),

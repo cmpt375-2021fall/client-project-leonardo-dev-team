@@ -22,11 +22,22 @@ class NewUserForm(UserCreationForm):
 
 class MyCustomLoginForm(LoginForm):
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.fields["login"].label = ""
+        self.fields["password"].label = ""
+        # self.remember = None
+        # self.fields['remember'].lab = None
+
     def login(self, *args, **kwargs):
 
         # Add your own processing here.
 
         # You must return the original result.
+        self.fields["login"].label = ""
+        self.fields["password"].label = ""
+        # self.remember = None
         return super(MyCustomLoginForm, self).login(*args, **kwargs)
 
 # class CustomAuthForm(AuthenticationForm):

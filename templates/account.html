@@ -1,106 +1,94 @@
 {% extends "base.html" %}
+{% load static %}
 
-
-    {% block content %}
-
-        {% load static %}
-
-        <div style="display: flex; margin-top: 10rem; ">
-
-
-            <div class = "pic" style="margin-right: 25px; margin-left: 25px; position: fixed">
-                <img style="height:100px; width:auto; margin-top: 25px;" vertical-align="left" src="{% static "leo/images/Chair2.png" %}">
+{% block content %}
+    <div style="display: flex; margin-top: 10rem; ">
+        <div class="pic" style="margin-right: 25px; margin-left: 25px; position: fixed">
+            <img style="height:100px; width:auto; margin-top: 25px;" vertical-align="left"
+                 src="{% static "leo/images/Chair2.png" %}">
+        </div>
+        <div class="content">
+            <div class="containerCard">
+                <img src="{% static "leo/images/Asset 11.png" %}">
+                <p>Cardholder 1:</p>
+                <p style="color: white">John Smith</p>
+                <br>
+                <p>Lookup ID:</p>
+                <p style="color: white">7654321</p>
+                <br>
+                <p>Type:</p>
+                <p style="color: white">Basic</p>
+                <br>
+                <p>Membership ID:</p>
+                <p style="color: white">1234567</p>
+                <br>
+                <p>Member Since:</p>
+                <p style="color: white">2021</p>
+                <br>
+                <p>Valid Through:</p>
+                <p style="color: white">2022</p>
             </div>
-
-
-            <div class="content">
-
-                <div class="containerCard">
-                    <img src="{% static "leo/images/Asset 11.png" %}">
-                    <p>Cardholder 1:</p><p style="color: white">John Smith</p>
-                    <br>
-                    <p>Lookup ID:</p><p style="color: white">7654321</p>
-                    <br>
-                    <p>Type:</p><p style="color: white">Basic</p>
-                    <br>
-                    <p>Membership ID:</p><p style="color: white">1234567</p>
-                    <br>
-                    <p>Member Since:</p><p style="color: white">2021</p>
-                    <br>
-                    <p>Valid Through:</p><p style="color: white">2022</p>
+            <!-- <div style="display: inline-block;">
+                <p style="color: #D7006D;">Download Membership Card (.pdf)</p>
+            </div> -->
+            <div>
+                <h1><b>Account</b></h1>
+            </div>
+            <hr style="height:4px; border:none; color: black; background-color: black;">
+            <div>
+                <h3>Your Profile</h3>
+                <hr style="color: white">
+                <h4>Account Number</h4>
+                <p>1234567</p>
+                <hr style="color: white">
+                <h4>Email</h4>
+                <p>user@test.com</p>
+                <hr style="color: white">
+                <h4>Password</h4>
+                <p>**********</p>
+            </div>
+            <hr style="height:4px; border:none; color: black; background-color: black;">
+            <div>
+                <div style="background-color: white; padding: 1rem">
+                    <h3>Your Membership</h3>
+                    <a>View other membership options</a>
                 </div>
-
-                <!-- <div style="display: inline-block;">
-                    <p style="color: #D7006D;">Download Membership Card (.pdf)</p>
-                </div> -->
-
-                <div>
-                    <h1><b>Account</b></h1>
-                </div>
-
-                <hr style="height:4px; border:none; color: black; background-color: black;">
-
-                <div>
-                    <h3>Your Profile</h3>
-                    <hr style="color: white">
-                    <h4>Account Number</h4>
-                    <p>1234567</p>
-                    <hr style="color: white">
-                    <h4>Email</h4>
-                    <p>user@test.com</p>
-                    <hr style="color: white">
-                    <h4>Password</h4>
-                    <p>**********</p>
-                </div>
-
-                <hr style="height:4px; border:none; color: black; background-color: black;">
-
-                <div>
-                    <div style="background-color: white; padding: 1rem">
-                        <h3>Your Membership</h3>
-                        <a>View other membership options</a>
+            </div>
+            <hr style="height:4px; border:none; color: black; background-color: black;">
+            <div>
+                <h3>Your Lounge</h3>
+                <hr style="color: white">
+                <div style="display: flex;">
+                    <div style="margin-right: 1rem">
+                        <img style="height:75px; width:auto;" src="{% static "leo/images/Newsletter.png" %}">
+                    </div>
+                    <div style="flex-grow: 1">
+                        <h4><a href="{% url 'newsletter' %}"><b>Newsletter</b></a></h4>
+                        <p>Some Description</p>
                     </div>
                 </div>
-
-                <hr style="height:4px; border:none; color: black; background-color: black;">
-
-                <div>
-                    <h3>Your Lounge</h3>
-                    <hr style="color: white">
-                    <div style="display: flex;">
-                        <div style="margin-right: 1rem">
-                            <img style="height:75px; width:auto;" src="{% static "leo/images/Newsletter.png" %}">
-                        </div>
-                        <div style="flex-grow: 1">
-                            <h4><a href = "{% url 'newsletter' %}" ><b>Newsletter</b></a></h4>
-                            <p>Some Description</p>
-                        </div>
+                <hr style="color: white">
+                <div style="display: flex;">
+                    <div style="margin-right: 1rem">
+                        <img style="height:75px; width:auto;" src="{% static "leo/images/Calendar (1).png" %}">
                     </div>
-                    <hr style="color: white">
-                    <div style="display: flex;">
-                        <div style="margin-right: 1rem">
-                            <img style="height:75px; width:auto;" src="{% static "leo/images/Calendar (1).png" %}">
-                        </div>
-                        <div style="flex-grow: 1">
-                            <h4><a href="{% url 'calendar' %}"><b>Calendar</b></a></h4>
-                            <p>Some Description</p>
-                        </div>
-                    </div>
-                    <hr style="color: white">
-                    <div style="display: flex;">
-                        <div style="margin-right: 2rem; margin-left: 1rem">
-                            <img style="height:75px; width:auto;" src="{% static "leo/images/Asset 8.png" %}">
-                        </div>
-                        <div style="flex-grow: 1">
-                            <h4><a href="{% url 'exclusive' %}"><b>Exclusive Content</b></a></h4>
-                            <p>Some Description</p>
-                        </div>
+                    <div style="flex-grow: 1">
+                        <h4><a href="{% url 'calendar' %}"><b>Calendar</b></a></h4>
+                        <p>Some Description</p>
                     </div>
                 </div>
-
+                <hr style="color: white">
+                <div style="display: flex;">
+                    <div style="margin-right: 2rem; margin-left: 1rem">
+                        <img style="height:75px; width:auto;" src="{% static "leo/images/Asset 8.png" %}">
+                    </div>
+                    <div style="flex-grow: 1">
+                        <h4><a href="{% url 'exclusive' %}"><b>Exclusive Content</b></a></h4>
+                        <p>Some Description</p>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <div style="margin-bottom: 100px"></div>
-
-    {% endblock %}
+    </div>
+    <div style="margin-bottom: 100px"></div>
+{% endblock %}

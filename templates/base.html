@@ -5,31 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leonardo Lounge</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'leo/header.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'leo/footer.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'leo/application.css' %}">
+{#    <link rel="stylesheet" type="text/css" href="{% static 'leo/header.css' %}">#}
+{#    <link rel="stylesheet" type="text/css" href="{% static 'leo/footer.css' %}">#}
+{#    <link rel="stylesheet" type="text/css" href="{% static 'leo/application.css' %}">#}
+    <link rel="stylesheet" type="text/css" href="{% static 'leo/login.css' %}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Red+Hat+Text&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300&display=swap">
-    <link rel="shortcut icon" type="image/png" href="{% static 'leo/images/Asset 11.png' %}"/>
-</head>
-<body style = "margin: 0;">
-    <nav>
-
-        {% include "header.html" %}
-
-
-    </nav>
-    {% block content %}{% endblock %}
-    {% include "footer.html" %}
-    <script src={% static "leo/app.js" %}></script>
-
+{#    <link rel="shortcut icon" type="image/png" href="{% static 'leo/images/Asset 11.png' %}"/>#}
+{#</head>#}
+<body>
+<div class="outer">
+{% if request.resolver_match.view_name == 'login' %}<div class="inner login-bg">{% else %}<div class="inner">{% endif %}
+{% include "header.html" %}
+<main>{% block content %}{% endblock %}</main>
+    </div>
+{% include "footer.html" %}
+{#<script src={% static "leo/app.js" %}></script>#}
+{# not sure where the logout button goes #}
+{% if user.is_authenticated %}
 <form method="post" action="{% url 'account_logout' %}">
-  {% csrf_token %}
-  {% if redirect_field_value %}
-    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-  {% endif %}
-  <button class="STYLE_ME" type="submit">Logout</button>
+    {% csrf_token %}
+    {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+    {% endif %}
+    <button class="STYLE_ME" type="submit">Logout</button>
 </form>
-
+{% endif %}
+<a href="{% url 'register' %}">register</a>
+<a href="{% url 'login' %}">login</a>
+</div>
 </body>
 </html>
