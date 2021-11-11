@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import NewUserForm
-from django.contrib.auth import login
+# from django.contrib.auth import login
 from django.contrib import messages
 from django.views.generic import ListView, DetailView
 
@@ -16,9 +16,9 @@ from django.http import HttpResponse
 from .models import Post
 
 
-def login(request):
-    print(request.method)
-    return render(request, template_name="login.html")
+# def login(request):
+#     print('login')
+#     return render(request)
 
 
 def dashboard(request):
@@ -66,6 +66,7 @@ def footer(request):
 '''
 
 def register_request(request):
+    print('register_request')
     if request.method == "POST":
         form = NewUserForm(request.POST)
         if form.is_valid():
@@ -78,6 +79,7 @@ def register_request(request):
     return render(request=request, template_name="register.html", context={"register_form": form})
 
 def login_request(request):
+    print('login_request')
     if request.method == "POST":
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
@@ -97,6 +99,7 @@ def login_request(request):
 
 
 def homepage(request):
+    print('homepage')
     if request.method == "POST":
         form = NewUserForm(request.POST)
         if form.is_valid():
@@ -107,3 +110,6 @@ def homepage(request):
         messages.error(request, "Unsuccessful registration. Invalid information.")
     form = NewUserForm()
     return render(request=request, template_name="register.html", context={"register_form": form})
+
+# from django.contrib.auth.models import User
+# user = User.objects.create_user(email='a@a.com', password='123')

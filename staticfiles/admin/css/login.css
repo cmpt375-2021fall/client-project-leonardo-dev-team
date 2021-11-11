@@ -34,6 +34,7 @@
     height: auto;
 }
 
+
 .login .form-row {
     padding: 4px 0;
 }
@@ -43,10 +44,15 @@
     line-height: 2em;
 }
 
-.login .form-row #id_username, .login .form-row #id_password {
-    padding: 8px;
-    width: 100%;
-    box-sizing: border-box;
+
+/*.login .form-row #id_username, .login .form-row #id_password {*/
+/*    padding: 8px;*/
+/*    width: 100%;*/
+/*    box-sizing: border-box;*/
+/*}*/
+
+.input #id_username {
+    color:green;
 }
 
 .login .submit-row {
