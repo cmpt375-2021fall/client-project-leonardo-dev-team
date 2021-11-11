@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
+from django.urls import reverse_lazy
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,8 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com', 'localhost']
 
-
-# Application definition
+SITE_ID = 1 # needed for django-allauth to work
 
 INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
@@ -37,11 +38,19 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
     'django.contrib.staticfiles',
     'leo.apps.LeoConfig',
-    'crispy_forms'
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 ]
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -105,6 +114,15 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# django-allauth config
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED=True
+ACCOUNT_USERNAME_REQUIRED=False
+ACCOUNT_FORMS = {
+    'login': 'leo.forms.MyCustomLoginForm',
+    'signup': 'leo.forms.MyCustomSignupForm'
+}
+ACCOUNT_SESSION_REMEMBER = True
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
@@ -125,6 +143,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
+
+LOGIN_URL = reverse_lazy('login')
+LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
+
 
 STATIC_ROOT = BASE_DIR / 'static_files'
 #MEDIA_ROOT = BASE_DIR / 'media'

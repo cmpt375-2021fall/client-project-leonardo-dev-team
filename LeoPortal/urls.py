@@ -14,24 +14,23 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 import leo.views as views
-from leo.views import exclusiveView, exclusiveDetailView
+from leo.views import exclusiveDetailView
 from django.conf import settings
 from django.conf.urls.static import static
+from allauth.account import views as auth_views
 
 urlpatterns = [
-    #login
-    path('', views.login_request),
-    path('register/', views.register_request, name='register'),
-    path('login/', views.login_request, name ='login_request'),
+    path('', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
+    path('signup/', auth_views.SignupView.as_view(template_name='registration/register.html'), name='signup'),
+    path('accounts/', include('allauth.urls')),
     path('dashboard/', views.dashboard, name = 'dashboard'),
     path('admin/', admin.site.urls),
     path('newsletter/', views.newsletter, name = 'newsletter'),
     path('calendar/', views.calendar, name = 'calendar'),
     path('account/', views.account, name = 'account'),
-    #path('exclusive_content/', views.exclusive, name = 'exclusive'),
-    path('exclusive_content', exclusiveView.as_view(), name = 'exclusive'),
+    path('exclusive_content/', views.exclusive, name = 'exclusive'),
     path('exclusive/<int:pk>', exclusiveDetailView.as_view(), name = 'exclusiveDetail'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
