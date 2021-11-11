@@ -83,8 +83,6 @@ img{
 }
 
 
-
-
 .blog a:link{
   color: #D7006D;
   text-decoration: none;
@@ -328,6 +326,15 @@ body {
 .login p {
   margin-top: 0;
   margin-bottom: 0;
+
+}
+body{
+  background-image:  linear-gradient(to bottom, white, #76C4D5); margin: 0;
+}
+
+.login {
+  margin-top: 20rem;
+
 }
 
 .login-header {

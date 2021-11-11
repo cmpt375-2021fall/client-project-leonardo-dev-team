@@ -29,7 +29,7 @@ urlpatterns = [
     #login
     # path('', views.login_request),
     # path('accounts/login/', auth_views.auth_login.,{'authentication_form': CustomAuthForm}, name='login'),
-    path('accounts/login/', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
+    path('', auth_views.LoginView.as_view(template_name='registration/login.html'), name='login'),
     # path('accounts/', include('allauth.urls')),
       path('accounts/', include('allauth.urls')),
 
