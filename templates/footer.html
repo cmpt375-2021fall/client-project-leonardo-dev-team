@@ -1,5 +1,27 @@
 
 <footer>
-<p><a href="{% url 'dashboard' %}">Home</a></p>
-<p><a href="#">Back to top</a></p>
+
+    <ul>
+  <li><a href="{% url 'dashboard' %}">Home</a></li>
+  <li><a href="#">Back to top</a></li>
+        <li><a href="{% url 'register' %}">register</a></li>
+<li><a href="{% url 'login' %}">login</a></li>
+            {% if user.is_authenticated %}
+        <li><form method="post" action="{% url 'account_logout' %}">
+    {% csrf_token %}
+    {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+    {% endif %}
+    <button class="STYLE_ME" type="submit">Logout</button></form>
+
+        </li>
+    {% endif %}
+</ul>
+
+
 </footer>
+
+
+
+
+
