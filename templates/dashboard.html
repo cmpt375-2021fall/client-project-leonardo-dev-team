@@ -2,13 +2,13 @@
 {% load static %}
 {% block content %}
 <div class="dashboard-container">
-    <div class="card-row">
+    <div class="dashboard-row">
             <a href="{% url 'calendar' %}"><img src="{% static "leo/images/Calendar (1).png" %}"><p>Calendar</p></a>
-            <a href="{% url 'account' %}"><img src="{% static "leo/images/Chair2.png" %}"><p>My Membership</p></a>
+        <a href="{% url 'account' %}"><img src="{% static "leo/images/Chair2.png" %}"><p>My Membership</p></a>
     </div>
-    <div class="card-row">
-            <a  href="{% url 'newsletter' %}"><img src="{% static "leo/images/Newsletter.png" %}"><p>Newsletter</p></a>
-            <a  href="{% url 'exclusive' %}"><img src="{% static "leo/images/Asset 8.png" %}"><p> Exclusive content</p></a>
+    <div class="dashboard-row">
+        <a  href="{% url 'newsletter' %}"><img src="{% static "leo/images/Newsletter.png" %}"><p>Newsletter</p></a>
+        <a  href="{% url 'exclusive' %}"><img src="{% static "leo/images/Asset 8.png" %}"><p>Exclusive content</p></a>
     </div>
 </div>
 {% endblock %}

@@ -1,14 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<div style="display: flex; margin-top: 10rem;">
-    <div class = "pic" style="margin-right: 25px; margin-left: 25px; position: fixed">
-        <img style="height:100px; width:auto; margin-top: 25px;" vertical-align="left" src="{% static "leo/images/Newsletter.png" %}">
-    </div>
+<div class="side-panel"><img src="{% static "leo/images/Newsletter.png" %}"></div>
 
-    <div class="content">
-        <h1><b>Newsletter</b></h1>
-        <div>
+        <div class="account-content">
+        <div class="page-title">Newsletter</div>
+        <div class="newsletter-news-item">
             <h3>October 18, 2021</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae pharetra elit. Integer felis massa,
             suscipit scelerisque finibus et, ultricies a leo. In porttitor ante sed mattis elementum. Class aptent taciti sociosqu ad litora
@@ -31,8 +28,7 @@
             Maecenas sapien nunc, aliquam nec sagittis quis, dignissim ut elit. Integer laoreet a turpis vitae vehicula. Etiam pretium eleifend tincidunt.
             Sed eget nisi non nibh maximus suscipit.</p>
         </div>
-
-        <div>
+        <div class="newsletter-news-item">
             <h3>September 21, 2021</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae pharetra elit. Integer felis massa,
             suscipit scelerisque finibus et, ultricies a leo. In porttitor ante sed mattis elementum. Class aptent taciti sociosqu ad litora
@@ -56,6 +52,4 @@
             Sed eget nisi non nibh maximus suscipit.</p>
         </div>
     </div>
-</div>
-<div style="margin-bottom: 100px"></div>
 {% endblock %}

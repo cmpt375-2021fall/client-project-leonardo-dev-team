@@ -5,24 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leonardo Lounge</title>
-{#    <link rel="stylesheet" type="text/css" href="{% static 'leo/header.css' %}">#}
-{#    <link rel="stylesheet" type="text/css" href="{% static 'leo/footer.css' %}">#}
-{#    <link rel="stylesheet" type="text/css" href="{% static 'leo/application.css' %}">#}
-    <link rel="stylesheet" type="text/css" href="{% static 'leo/login.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'leo/application.css' %}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Red+Hat+Text&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300&display=swap">
-{#    <link rel="shortcut icon" type="image/png" href="{% static 'leo/images/Asset 11.png' %}"/>#}
-{#</head>#}
+    <link rel="shortcut icon" type="image/png" href="{% static 'leo/images/Asset 11.png' %}"/>
+</head>
 <body id="section-{{ request.resolver_match.url_name }}">
 <div class="outer">
-<div class="{% if request.resolver_match.view_name == 'login' %} inner login-bg  {% else %} inner  {% endif %}">
-{% include "header.html" %}
-<main>{% block content %}{% endblock %}</main>
+    <div class="{% if request.resolver_match.view_name == 'login' or request.resolver_match.view_name == 'signup' %} inner login-bg  {% else %} inner  {% endif %}">
+        {% include "header.html" %}
+        <div class="content-body">
+            {% block content %}{% endblock %}
+        </div>
     </div>
-{% include "footer.html" %}
-{#<script src={% static "leo/app.js" %}></script>#}
-{# not sure where the logout button goes #}
-
+    {% include "footer.html" %}
+    <script src={% static "leo/app.js" %}></script>
+<div style="color: white; background-color:  gray">debug urls
+<a href="{% url 'signup' %}">register</a>
+<a href="{% url 'login' %}">login</a>
+{% if user.is_authenticated %}
+<form method="post" action="{% url 'account_logout' %}">
+    {% csrf_token %}
+    <button type="submit">Logout</button></form>
+    {% endif %}
+</div>
 </div>
 </body>
 </html>

@@ -1,403 +1,317 @@
 
-.card {
-  display: inline-block;
-  margin-left: 30px;
-  margin-right: 30px;
-  margin-bottom: 30px;
+html, body, .outer {
+    margin: 0;
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom, white, #76C4D5);
 }
 
-/* Add rounded corners to the top left and the top right corner of the image */
-  p{
-      font-family: 'Red Hat Display', regular;
-  }
-body{
-        font-family: 'Red Hat Text', regular;
-
-    min-height: 100vh;
+.outer {
+    font-family: 'Red Hat Text', regular, serif;
+    font-size: large;
     display: flex;
     flex-direction: column;
-    background-image:  linear-gradient(to bottom, white, #76C4D5);
-}
-footer{
-    margin-top: auto;
 }
 
-img{
-  border-radius: 5px 5px 0 0;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+.content-body {
+    display: flex;
+    flex: 1;
+    margin-bottom: 5vh;
 }
 
-/* On mouse-over, add a deeper shadow */
-.container:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+.inner {
+    padding-left: 3vw;
+    padding-right: 3vw;
+    flex: 1;
 }
 
-.calblock{
-  background-color: #76C4D5;
+.page-title {
+    font-size: xx-large;
+    font-weight: bold;
 }
 
-
-/* Add some padding inside the card container */
-.container {
-  position: relative;
-  height: 200px;
-  width: 200px;
-  background: #f2f2f2;
-  overflow: hidden;
-  border-radius: 20px;
-  box-shadow: 0  8px 16px 0 rgba(0,0,0,0.1);
-  display: inline-block;
-  margin-left: 5px;
-  margin-right: 5px;
-  margin-top: 5px;
+.side-panel {
+    width: 7vw;
+    margin-right: 2vw;
 }
 
-.outer{
-  text-align: center;
-  margin-top: 20rem;
-  margin-bottom: 50px;
+.side-panel img {
+    height: 120px;
+    display: block;
 }
 
-
-.containerCard {
-  position: relative;
-  background: #76C4D5;
-  overflow: hidden;
-  border-radius: 20px;
-  display: inline-block;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  padding: 10px;
-}
-.containerCard p{
-  display: inline-block;
-  margin-right: 1rem;
+/* HEADER */
+header {
+    display: flex;
+    justify-content: center;
 }
 
-.containerCard img{
-  height:100px;
-  width:auto;
-  padding: 1rem;
+header img {
+    height: 250px;
 }
 
+/* end of HEADER */
 
-.blog a:link{
-  color: #D7006D;
-  text-decoration: none;
+/* NAV */
+nav {
+    display: flex;
 }
 
-.blog a:visited{
-  color: #8C4B9D;
-  text-decoration: none;
-}
-
-.blog a p:visited{
-  color: #D7006D;
-  text-decoration: none;
-}
-
-.blog a:hover{
-  text-decoration: none;
-}
-
-.blog a p:hover, .blog a h3:hover{
-  text-decoration: underline;
-}
-
-.blog a:active{
-  text-decoration: none;
-}
-
-.blog{
-  position: relative;
-}
-
-
-@media only screen and (max-width: 600px) {
-
-  .content {
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
-
-  .title {
-    margin-left: 1rem;
-  }
-
-  .pic {
-    display: none;
-  }
-
-  .imgSize {
-    text-align: center;
-    width: 90%;
-    height: auto;
-  }
-
-  .vidSize {
-    width: 90%;
-    height: auto;
-  }
-
-
-  .Calender{
-  /*flex-grow:1;*/
-  border:solid 2px #76C4D5;
-  border-radius:3%;
-  height:150%;
-  width: auto;
-  frameborder:50;
-  scrolling:no;
-  }
-
-
-  .iframeWrapper {
-	position: relative;
-	padding-bottom: 100%; /* 16:9 */
-	padding-top: 50px;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    text-align: center;
-
-}
-  .iframeWrapper iframe {
-	position: absolute;
-	top: 0;
-	left: 1rem;
-	width: 90%;
-	height: 95%;
-    border:solid 2px #76C4D5;
-  border-radius:3%;
-
-  }
-}
-
-
-
-  @media only screen and (max-width: 600px){
-
-  .imgSizeDetail{
-    text-align: center;
-    width: 90%;
-    height: auto;
-  }
-
-  .vidSizeDetail{
-    width: 90%;
-    height: auto;
-  }
-
-  .mobile-vid{
-    text-align: center;
-  }
-}
-
-@media only screen and (min-width: 601px) {
-  .content{
-    margin-left: 10rem;
-    margin-right: 110px;
-  }
-
-  .contentImg{
-    display: inline-block;
-  }
-
-  .centertext{
-    position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-60%);
-    transform: translateY(-60%);
-  }
-
-  .imgSize{
-    width: 300px;
-    height: auto;
-  }
-
-  .vidSize{
-    width: 300px;
-    height: auto;
-  }
-
-  .imgSizeDetail{
-    width: 80%;
-    height: auto;
-  }
-
-  .vidSizeDetail{
-    width: 80%;
-    height: auto;
-  }
-
-  .mobile-vid{
-    text-align: center;
-  }
-  /*
-  .Calender{
-  flex-grow:1;
-  border:solid 2px #76C4D5;
-  border-radius:20px;
-  margin-left:auto;
-  /*margin-right:100px;
-  height:600px;
-  width:100%;
-  frameborder:0;
-  scrolling:no;
-  }
-  .content calCalender{
-  margin-left:10px;
-  margin-top:5px;
-  margin-right: 25px;
-  }
-  .calCalender h1{
-
-  }
-  */
-  .iframeWrapper {
-	position: relative;
-	padding-bottom: 50%; /* 16:9 */
-	padding-top: 50px;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    text-align: center;
-
-}
-  .iframeWrapper iframe {
-	position: absolute;
-	top: 0;
-	left: 10rem;
-	width: 90%;
-	height: 50%;
-    border:solid 2px #76C4D5;
-    border-radius:20px;
-
-  }
+nav ul {
+    display: flex;
+    flex: 1;
+    justify-content: right;
+    list-style: none;
 
 }
 
-
-body {
-  background: #456;
-}
-
-@media only screen and (max-width: 600px) {
-  .login {
-    width: 80%;
-    margin: 16px auto;
-    font-size: 16px;
-    z-index: 10;
-  }
-
-  .img2 {
-    margin-bottom: 75px;
-    width: 80%;
-    z-index: -10;
-  }
-}
-@media only screen and (min-width: 601px) {
-  .login {
-    width: 400px;
-    margin: 16px auto;
-    font-size: 16px;
-    z-index: 10;
-  }
-
-  .img2 {
-    margin-top: -150px;
-    margin-bottom: 75px;
-    width: 80%;
-    z-index: -10;
-}
-}
-
-/*
-  ██╗      ██████╗  ██████╗ ██╗███╗   ██╗
-  ██║     ██╔═══██╗██╔════╝ ██║████╗  ██║
-  ██║     ██║   ██║██║  ███╗██║██╔██╗ ██║
-  ██║     ██║   ██║██║   ██║██║██║╚██╗██║
-  ███████╗╚██████╔╝╚██████╔╝██║██║ ╚████║
-  ╚══════╝ ╚═════╝  ╚═════╝ ╚═╝╚═╝  ╚═══╝
- */
-
-/* Reset top and bottom margins from certain elements */
-.login-header,
-.login p {
-  margin-top: 0;
-  margin-bottom: 0;
-
-}
-body{
-  background-image:  linear-gradient(to bottom, white, #76C4D5); margin: 0;
-}
-
-.login {
-  margin-top: 20rem;
+nav li {
+    align-self: flex-start;
+    padding-left: 4rem;
+    white-space: nowrap;
+    font-weight: bold;
 
 }
 
-.login-header {
-    border-radius: 25px 25px 0 0;
-  background: white;
-  padding: 20px;
-  font-size: 1.4em;
-  font-weight: normal;
-  text-align: center;
-  color: black;
+nav a {
+    font-size: medium;
+    font-weight: normal;
+    text-decoration: none;
+    color: black;
+}
+
+@media only screen and (max-width: 900px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding-top: 0.5rem;
+        padding-left: 0;
+    }
+
+    nav li {
+        padding: 1rem;
+        padding-left: 0;
+        /*padding-left: 0;*/
+    }
+
+    .content-body {
+        flex-direction: column;
+    }
+}
+
+nav .logo-image {
+    height: 100px;
+    padding-bottom: 20px;
+}
+
+#section-account #nav-account,
+#section-calendar #nav-calendar,
+#section-newsletter #nav-newsletter,
+#section-exclusive #nav-exclusive {
+    color: #8C4B9D;
+    font-weight: bold;
+}
+
+/* end of NAV */
+
+/* CALENDAR */
+.calendar-frame {
+    flex: 1;
+}
+
+.calendar-container {
+    display: flex;
+    flex-direction: row;
+}
+
+iframe {
+    object-fit: fill;
+    /*flex: 1;*/
+    width: 100%;
+    height: 50vh;
+}
+
+/* end of CALENDAR */
+
+/* ACCOUNT */
+.account-container {
+    display: flex;
+}
+
+.account-content {
+    flex: 1;
+}
+
+.account-content {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.account-card {
+    margin: 50px;
+    display: flex;
+    object-fit: scale-down;
+    flex-direction: column;
+    background: #76C4D5;
+    border-radius: 20px;
+    width: 250px;
+}
+
+.account-info-item {
+    display: flex;
+    padding: 10px;
+}
+
+.account-info-value {
+    flex: 1;
+    color: white;
+}
+
+.account-card img {
+    justify-content: center;
+    padding-bottom: 25px;
+    margin: 25px;
+}
+
+/* end of ACCOUNT */
+
+/* LOGIN */
+.login-bg {
+    background-image: url("/static/leo/images/Couch (1).png");
+    background-size: 75%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+.wrapper {
+    display: flex;
+    flex: 1;
+    justify-content: center;
 }
 
 .login-container {
-    border-radius: 0 0 25px 25px;
-  background: white;
-  padding: 12px;
+    width: 400px;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    border-radius: 25px;
+    padding: 16px;
+    background-color: white;
 }
 
-/* Every row inside .login-container is defined with p tags */
-.login p {
-  padding: 12px;
+.login-container input {
+    border-radius: 25px;
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    padding: 20px;
+    outline: 0;
+    width: 100%;
 }
 
-.login input {
-  box-sizing: border-box;
-  display: block;
-  width: 100%;
-  border-width: 1px;
-  border-style: solid;
-  padding: 16px;
-  outline: 0;
-  font-family: inherit;
-  font-size: 0.95em;
+.login-container button {
+    background: #76C4D5;
+    box-shadow: 3px 3px #0090AA;
+    border-radius: 25px;
+    color: black;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    border-width: thin;
+    padding: 17px;
+    width: 100%;
 }
 
-.login input[type="email"],
-.login input[type="password"] {
-  background: #fff;
-  border-color: #bbb;
-    border-radius: 25px 25px 25px 25px;
-  color: #555;
+.login-container button:hover {
+    background: #B687B8;
+    box-shadow: 3px 3px #925794;
 }
 
-/* Text fields' focus effect */
-.login input[type="text"]:focus,
-.login input[type="password"]:focus {
-  border-color: #888;
+.login-container button:focus {
+    border-color: #05a;
 }
 
-.login input[type="submit"] {
-  background: #76C4D5;
-  box-shadow: 3px 3px #0090AA;
-  border-radius: 25px 25px 25px 25px;
-  color: black;
-  cursor: pointer;
+.login-container form {
+    padding: 10px;
 }
 
-.login input[type="submit"]:hover {
-  background: #B687B8;
-  box-shadow: 3px 3px #925794;
+.login-container h2 {
+    margin: 10px;
+    font-weight: normal;
+    text-align: center;
 }
 
-/* Buttons' focus effect */
-.login input[type="submit"]:focus {
-  border-color: #05a;
+/* end of LOGIN*/
+
+/* FOOTER */
+footer {
+    background-color: #263746;
+    text-align: center;
 }
+
+footer ul {
+    list-style: none;
+}
+
+footer a {
+    margin-top: 15px;
+    color: white; /*change to the leo gray or blue*/
+    text-decoration: none;
+    font-size: 15px;
+    /*font-weight: normal;*/
+}
+
+footer a:hover {
+    color: #76C4D5; /*change to the leo gray or blue*/
+}
+footer hr{
+    margin-bottom: 15px;
+    background-color: white;
+    width: 90%;
+}
+
+/* end of FOOTER */
+
+/* DASHBOARD */
+.dashboard-row {
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard-container {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.dashboard-container a {
+    width: 200px;
+    height: 200px;
+    margin: 50px;
+    text-decoration: none;
+    background: #f2f2f2;
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    font-size: large;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
+    color: black;
+    white-space: nowrap;
+}
+
+.dashboard-container a:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+}
+
+.dashboard-container img {
+    max-width: 100%;
+    max-height: 80%;
+}
+
+/*end of DASHBOARD*/
