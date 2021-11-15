@@ -12,23 +12,13 @@
 </head>
 <body id="section-{{ request.resolver_match.url_name }}">
 <div class="outer">
-    <div class="{% if request.resolver_match.view_name == 'login' or request.resolver_match.view_name == 'signup' %} inner login-bg  {% else %} inner  {% endif %}">
+    <div class="inner">
         {% include "header.html" %}
-        <div class="content-body">
-            {% block content %}{% endblock %}
-        </div>
+        <div class="content-body">{% block content %}{% endblock %}</div>
     </div>
     {% include "footer.html" %}
     <script src={% static "leo/app.js" %}></script>
-<div style="color: white; background-color:  gray">debug urls
-<a href="{% url 'signup' %}">register</a>
-<a href="{% url 'login' %}">login</a>
-{% if user.is_authenticated %}
-<form method="post" action="{% url 'account_logout' %}">
-    {% csrf_token %}
-    <button type="submit">Logout</button></form>
-    {% endif %}
-</div>
+{% include "debug.html" %}
 </div>
 </body>
 </html>

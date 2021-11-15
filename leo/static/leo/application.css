@@ -135,7 +135,7 @@ iframe {
 
 /* end of CALENDAR */
 
-/* ACCOUNT */
+/* PROFILE */
 .account-container {
     display: flex;
 }
@@ -175,11 +175,21 @@ iframe {
     padding-bottom: 25px;
     margin: 25px;
 }
-
-/* end of ACCOUNT */
+/* end of PROFILE */
 
 /* LOGIN */
-.login-bg {
+
+#section-account_login .inner,
+#section-account_logout .inner,
+#section-account_signup .inner,
+#section-account_reset_password .inner,
+#section-account_reset_password_done .inner,
+#section-account_reset_password_from_key .inner,
+#section-account_reset_password_from_key_done .inner,
+#section-account_change_password .inner,
+#section-account_set_password .inner,
+#section-account_confirm_email .inner,
+#section-account_email_verification_sent .inner {
     background-image: url("/static/leo/images/Couch (1).png");
     background-size: 75%;
     background-position: bottom;

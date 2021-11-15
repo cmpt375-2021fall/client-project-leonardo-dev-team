@@ -123,6 +123,14 @@ ACCOUNT_FORMS = {
     'signup': 'leo.forms.MyCustomSignupForm'
 }
 ACCOUNT_SESSION_REMEMBER = True
+# ACCOUNT_CONFIRM_EMAIL_ON_GET=True
+ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL='dashboard'
+ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION=True
+ACCOUNT_LOGOUT_ON_GET=True
+ACCOUNT_EMAIL_VERIFICATION='mandatory'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
@@ -144,7 +152,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
-LOGIN_URL = reverse_lazy('login')
+LOGIN_URL = 'account_login'
 LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
 
 
@@ -157,4 +165,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

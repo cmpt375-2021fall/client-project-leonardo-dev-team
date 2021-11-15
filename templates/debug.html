@@ -1,0 +1,12 @@
+<div style="color: white; background-color:  gray">debug urls
+<a href="{% url 'account_signup' %}">signup</a>
+<a href="{% url 'account_login' %}">login</a>
+<a href="{% url 'account_change_password' %}">change_password</a>
+<a href="{% url 'account_email_verification_sent' %}">email_verification_sent</a>
+<a href="{% url 'account_reset_password' %}">reset_password</a>
+<a href="{% url 'account_reset_password_done' %}">reset_password_done</a>
+<a href="{% url 'account_reset_password_from_key_done' %}">reset_password_from_key_done</a>
+{% if user.is_authenticated %}
+<a href="{% url 'account_logout' %}">logout</a>
+{% endif %}
+</div>
