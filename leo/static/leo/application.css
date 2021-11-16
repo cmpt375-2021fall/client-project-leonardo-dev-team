@@ -112,6 +112,39 @@ img{
   position: relative;
 }
 
+.settingsDash {
+  position: fixed;
+  border-radius: 50%;
+  border:solid 5px white;
+  overflow: hidden;
+  width: 50px;
+  height: 50px;
+  float: right;
+  right: 0;
+  margin-right: 2rem;
+}
+
+.settings {
+  position: fixed;
+  border-radius: 50%;
+  border:solid 5px white;
+  overflow: hidden;
+  width: 50px;
+  height: 50px;
+  float: right;
+  right: 0;
+  bottom: 0;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+.settImg {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  background-color: white;
+}
+
 
 @media only screen and (max-width: 600px) {
 
@@ -194,8 +227,8 @@ img{
 
 @media only screen and (min-width: 601px) {
   .content{
-    margin-left: 10rem;
-    margin-right: 110px;
+    margin-left: 15rem;
+    margin-right: 15rem;
   }
 
   .contentImg{
