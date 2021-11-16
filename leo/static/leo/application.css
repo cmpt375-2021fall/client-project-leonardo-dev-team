@@ -78,22 +78,7 @@ img{
   padding: 1rem;
 }
 
-/* Changes to send to Thor*/
-.calCalender {
-  position: relative;
-  flex-grow: 1;
-  margin-left: 10rem;
-  margin-right: 110px;
-}
-.Calender {
-  flex-grow: 1;
-  border:solid 8px #C3C6C8;
-  border-radius: 20px;
-  margin-left: auto;
-  margin-right: 100px;
-  width: 1000px;
 
-}
 
 
 .blog a:link{
@@ -127,6 +112,39 @@ img{
   position: relative;
 }
 
+.settingsDash {
+  position: fixed;
+  border-radius: 50%;
+  border:solid 5px white;
+  overflow: hidden;
+  width: 50px;
+  height: 50px;
+  float: right;
+  right: 0;
+  margin-right: 2rem;
+}
+
+.settings {
+  position: fixed;
+  border-radius: 50%;
+  border:solid 5px white;
+  overflow: hidden;
+  width: 50px;
+  height: 50px;
+  float: right;
+  right: 0;
+  bottom: 0;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+}
+
+.settImg {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  background-color: white;
+}
+
 
 @media only screen and (max-width: 600px) {
 
@@ -154,90 +172,42 @@ img{
     height: auto;
   }
 
-  .calenderContainer img{
-  width:50%;
-  margin-top:5px;
-  margin-left:auto;
-  text-align:left;
-  }
+
   .Calender{
-  flex-grow:1;
+  /*flex-grow:1;*/
   border:solid 2px #76C4D5;
   border-radius:3%;
-  height:200%;
-  width:auto;
+  height:150%;
+  width: auto;
   frameborder:50;
   scrolling:no;
   }
-  .calCalender{
-  position:relative;
-  margin-right:10%;
-  /*position:relative;*/
-  }
-  .calCalender h1{
-  font-size:22px;
+
+
+  .iframeWrapper {
+	position: relative;
+	padding-bottom: 100%; /* 16:9 */
+	padding-top: 50px;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    text-align: center;
+
+}
+  .iframeWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 1rem;
+	width: 90%;
+	height: 95%;
+    border:solid 2px #76C4D5;
+  border-radius:3%;
+
   }
 }
 
- @media only screen and (min-width: 601px){
-    /*.calenderContainer {
-      margin-right: 25px;
-      margin-left:25px;
-    }*/
-     .calenderContainer img {
-         height: 100px;
-         width: auto;
-         margin-top: 5px;
-         margin-left: 5px;
-     }
-    .Calender {
-      flex-grow: 1;
-      border: solid 2px #76C4D5;
-      border-radius: 20px;
-      margin-left: auto;
-      margin-right: 100px;
-      height: 600px;
-      width: 200%;
-      frameborder: 0;
-      scrolling: no;
-    }
-    .calCalender{
-        margin-left: 10px;
-        margin-top: 5px;
-    }
-   .calCalender h1{
-    /*position: relative;*/
-  }
-}
+
 
   @media only screen and (max-width: 600px){
-
-      .calenderContainer img {
-         width: 50%;
-         margin-top: 5px;
-         margin-left: auto;
-        text-align: left;
-    }
-
-
-    .Calender {
-      flex-grow: 1;
-
-      border: solid 2px #76C4D5;
-      border-radius: 3%;
-      height: 200%;
-      width: auto;
-      frameborder: 50;
-      scrolling: no;
-    }
-     .calCalender {
-            position: relative;
-         margin-right: 10%;
-      /*position: relative;*/
-    }
-     .calCalender h1 {
-         font-size: 22px;
-     }
 
   .imgSizeDetail{
     text-align: center;
@@ -257,8 +227,8 @@ img{
 
 @media only screen and (min-width: 601px) {
   .content{
-    margin-left: 10rem;
-    margin-right: 110px;
+    margin-left: 15rem;
+    margin-right: 15rem;
   }
 
   .contentImg{
@@ -296,33 +266,22 @@ img{
     text-align: center;
   }
 
-      /*.calenderContainer{
-    margin-right:25px;
-    margin-left:25px;
-    }*/
-    .calenderContainerimg{
-    height:100px;
-    width:auto;
-    margin-top:5px;
-    margin-left:5px;
-    }
-    .Calender{
-    flex-grow:1;
+  .iframeWrapper {
+	position: relative;
+	padding-bottom: 50%; /* 16:9 */
+	padding-top: 50px;
+    margin-right: 10rem;
+
+    text-align: center;
+
+  }
+  .iframeWrapper iframe {
+	position: absolute;
+	top: 0;
+    left: 10rem;
+	width: 90%;
+	height: 70%;
     border:solid 2px #76C4D5;
     border-radius:20px;
-    margin-left:auto;
-    margin-right:100px;
-    height:600px;
-    width:200%;
-    frameborder:0;
-    scrolling:no;
-    }
-    .calCalender{
-    margin-left:10px;
-    margin-top:5px;
-    }
-    .calCalender h1{
-    /*position:relative;*/
-    }
-
+  }
 }

@@ -34,7 +34,7 @@
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1200px) {
     .mobile-nav{
         float: right;
     }
@@ -59,6 +59,7 @@
       text-decoration: none;
       font-size: 17px;
         vertical-align: center;
+        display: block;
       /*change font, make a top margin and make that part grey, change box size when hovering to smaller*/
     }
 
@@ -71,7 +72,7 @@
     }
 }
 
-@media only screen and (min-width: 600px){
+@media only screen and (min-width: 1201px){
     .mobile-nav{
         display: none;
     }
