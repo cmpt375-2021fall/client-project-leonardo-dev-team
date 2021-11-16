@@ -232,45 +232,23 @@ img{
   .mobile-vid{
     text-align: center;
   }
-  /*
-  .Calender{
-  flex-grow:1;
-  border:solid 2px #76C4D5;
-  border-radius:20px;
-  margin-left:auto;
-  /*margin-right:100px;
-  height:600px;
-  width:100%;
-  frameborder:0;
-  scrolling:no;
-  }
-  .content calCalender{
-  margin-left:10px;
-  margin-top:5px;
-  margin-right: 25px;
-  }
-  .calCalender h1{
 
-  }
-  */
   .iframeWrapper {
 	position: relative;
 	padding-bottom: 50%; /* 16:9 */
 	padding-top: 50px;
-    padding-right: 1rem;
-    padding-left: 1rem;
+    margin-right: 10rem;
+
     text-align: center;
 
-}
+  }
   .iframeWrapper iframe {
 	position: absolute;
 	top: 0;
-	left: 10rem;
+    left: 10rem;
 	width: 90%;
-	height: 50%;
+	height: 70%;
     border:solid 2px #76C4D5;
     border-radius:20px;
-
   }
-
 }
