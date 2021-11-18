@@ -36,3 +36,4 @@ urlpatterns = [
     path('exclusive/<int:pk>', exclusiveDetailView.as_view(), name = 'exclusiveDetail'),
     path('membership', views.member, name = 'membership'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
