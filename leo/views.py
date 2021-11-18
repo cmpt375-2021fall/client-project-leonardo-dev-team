@@ -13,7 +13,8 @@ from django.http import HttpResponse
 
 
 # Create your views here.
-from .models import Post
+from .models import Post, Calender
+
 
 
 def login(request):
@@ -57,6 +58,10 @@ class exclusiveView(ListView):
 class exclusiveDetailView(DetailView):
     model = Post
     template_name = 'exclusive_detail.html'
+
+class calenderView(ListView):
+    model = Calender
+    template_name = 'calendar.html'
 '''
 def header(request):
     context = {

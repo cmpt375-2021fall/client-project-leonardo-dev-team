@@ -12,3 +12,12 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Calender(models.Model):
+    title = models.CharField(max_length=255)
+    calenderLink = models.CharField(max_length=511)
+
+    def __str__(self):
+        return self.title
+

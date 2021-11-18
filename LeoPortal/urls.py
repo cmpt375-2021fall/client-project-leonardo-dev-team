@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 
 import leo.views as views
-from leo.views import exclusiveView, exclusiveDetailView
+from leo.views import exclusiveView, exclusiveDetailView, calenderView
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -29,7 +29,8 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name = 'dashboard'),
     path('admin/', admin.site.urls),
     path('newsletter/', views.newsletter, name = 'newsletter'),
-    path('calendar/', views.calendar, name = 'calendar'),
+    #path('calendar/', views.calendar, name = 'calendar'),
+    path('calendar/', calenderView.as_view(), name = 'calendar'),
     path('account/', views.account, name = 'account'),
     #path('exclusive_content/', views.exclusive, name = 'exclusive'),
     path('exclusive_content', exclusiveView.as_view(), name = 'exclusive'),
