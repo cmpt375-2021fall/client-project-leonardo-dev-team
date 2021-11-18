@@ -9,13 +9,13 @@
 
 
             <div class = "pic" style="margin-right: 25px; margin-left: 50px; position: fixed">
-                <img style="height:100px; width:auto; margin-top: 25px;" vertical-align="left" src="{% static "leo/images/Wallet.png" %}">
+                <img style="height:175px; width:auto; margin-top: 25px;margin-left: 50px;" vertical-align="left" src="{% static "leo/images/SettingsGear.png" %}">
             </div>
 
 
-            <div class="content">
+            <h2 class="content">
 
-                <div class="containerCard">
+                <div class="containerCard" style="margin-left: 100px";>
                     <img src="{% static "leo/images/Asset 11.png" %}">
                     <p>Cardholder 1:</p><p style="color: white">John Smith</p>
                     <br>
@@ -34,15 +34,20 @@
                     <p style="color: #D7006D;">Download Membership Card (.pdf)</p>
                 </div> -->
 
-                <div>
-                    <h1><b>Account</b></h1>
+                <!--Need to figure out why the black lines don't move over to the right?
+                    +change lines from black to navy color
+                    +adjust lines to thicker in some spots
+                    +add "other options" button-->
+                <div class="ACCT Header" style="margin-left: 100px;font-weight: bolder;">
+                    <h1><b>My Membership</b></h1>
                 </div>
 
-                <hr style="height:4px; border:none; color: black; background-color: black;">
+                <hr style="height:4px; width:800px; border:none; color: black; background-color: black;margin-left:100px;">
 
-                <div>
-                    <h3>Your Profile</h3>
-                    <hr style="color: white">
+                <div class="ACCT info" style="margin-left: 100px;">
+
+                    <h3>Your Profile</h3><h3 style="font-weight: bold;font-size: large;"></h3>
+                    <hr style="color: white;">
                     <h4>Account Number</h4>
                     <p>1234567</p>
                     <hr style="color: white">
@@ -53,23 +58,27 @@
                     <p>**********</p>
                 </div>
 
-                <hr style="height:4px; border:none; color: black; background-color: black;">
+                <div class="Options Header" style="margin-left: 100px;">
+                <h2>Membership Options</h2>
+                </div>
 
-                <div>
+                <hr style="height:4px; border:none; color: black; background-color: black;margin-left:100px;">
+
+                <div class="Name of Membership Type" style="margin-left:100px;font-weight: bold;">
                     <div style="background-color: white; padding: 1rem">
-                        <h3>Your Membership</h3>
-                        <a>View other membership options</a>
+                        <h3>Name of Membership Type</h3>
+                        <a>Membership Description</a><a style="font-weight: lighter;"></a>
                     </div>
                 </div>
 
-                <hr style="height:4px; border:none; color: black; background-color: black;">
+                <hr style="height:4px; border:none; color: black; background-color: black;margin-left:100px;">
 
-                <div>
+                <div class="Other options" style="margin-left:100px;">
                     <h3>Your Lounge</h3>
                     <hr style="color: white">
                     <div style="display: flex;">
                         <div style="margin-right: 1rem">
-                            <img style="height:75px; width:auto;" src="{% static "leo/images/Newsletter.png" %}">
+                            <img style="height:75px; width:auto;margin-left:30px;" src="{% static "leo/images/Newsletter.png" %}">
                         </div>
                         <div style="flex-grow: 1">
                             <h4><a href = "{% url 'newsletter' %}" ><b>Newsletter</b></a></h4>
@@ -79,7 +88,7 @@
                     <hr style="color: white">
                     <div style="display: flex;">
                         <div style="margin-right: 1rem">
-                            <img style="height:75px; width:auto;" src="{% static "leo/images/Calendar (1).png" %}">
+                            <img style="height:75px; width:auto;margin-left:30px;" src="{% static "leo/images/Calendar (1).png" %}">
                         </div>
                         <div style="flex-grow: 1">
                             <h4><a href="{% url 'calendar' %}"><b>Calendar</b></a></h4>
@@ -89,7 +98,7 @@
                     <hr style="color: white">
                     <div style="display: flex;">
                         <div style="margin-right: 2rem; margin-left: 1rem">
-                            <img style="height:75px; width:auto;" src="{% static "leo/images/Asset 8.png" %}">
+                            <img style="height:75px; width:auto;margin-left:30px;" src="{% static "leo/images/Asset 8.png" %}">
                         </div>
                         <div style="flex-grow: 1">
                             <h4><a href="{% url 'exclusive' %}"><b>Exclusive Content</b></a></h4>
@@ -101,6 +110,6 @@
             </div>
         </div>
 
-        <div style="margin-bottom: 100px"></div>
+        <div style="margin-bottom: 100px;"></div>
 
     {% endblock %}

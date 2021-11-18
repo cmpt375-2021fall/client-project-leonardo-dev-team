@@ -40,7 +40,7 @@
             </div>
 
             <div id = "button" class = "topnav-right">
-                    {% url 'account' as url4 %}
+                    {% url 'membership' as url4 %}
                     <a href="{{ url4 }}"{% if request.path == url4 %} class="active"{% endif %} style="font-weight: bold;">My Membership</a>
                     {% url 'exclusive' as url3 %}
                     <a href="{{ url3 }}"{% if request.path == url3 %} class="active"{% endif %} style="font-weight: bold;">Exclusive Content</a>
@@ -53,9 +53,16 @@
         </header>
     </nav>
 
+        <div class ="settings">
+            <a href="{% url 'account' %}">
+                <img class = "settImg" src="{% static "leo/images/SettingsGear.png" %}">
+            </a>
+        </div>
+
         {% block content %}
 
         {% endblock %}
+
     <footer>
        <body style="margin: 0;">
             <div class = "footernav">
