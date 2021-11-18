@@ -58,7 +58,7 @@
       padding: 4rem;
       text-decoration: none;
       font-size: 17px;
-        vertical-align: center;
+        /*vertical-align: center;*/
         display: block;
       /*change font, make a top margin and make that part grey, change box size when hovering to smaller*/
     }
