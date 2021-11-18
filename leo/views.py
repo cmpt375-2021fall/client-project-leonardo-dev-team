@@ -20,6 +20,9 @@ def login(request):
     print(request.method)
     return render(request, template_name="login.html")
 
+def error(request):
+    context = {}
+    return render(request, 'error.html')
 
 def dashboard(request):
     context = {
