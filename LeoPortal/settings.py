@@ -25,6 +25,8 @@ SECRET_KEY = 'django-insecure-gsp^pvmg9u%*m5gp9n$kw9&m^!wl!_-v7-n@6x+(5)+*gs36&)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+SITE_ID = 1 # needed for django-allauth to work
+
 ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com', 'localhost']
 
 
@@ -37,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
     'django.contrib.staticfiles',
     'leo.apps.LeoConfig',
     'allauth',
@@ -121,9 +124,14 @@ ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION=True
 ACCOUNT_LOGOUT_ON_GET=True
 ACCOUNT_EMAIL_VERIFICATION='mandatory'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+ACCOUNT_FORMS = {
+    'login': 'leo.forms.MyCustomLoginForm',
+    'signup': 'leo.forms.MyCustomSignupForm'
+}
+
 
 LOGIN_URL = 'account_login'
-LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
+LOGIN_REDIRECT_URL = 'dashboard'
 
 
 # Internationalization

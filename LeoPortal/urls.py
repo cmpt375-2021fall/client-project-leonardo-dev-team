@@ -14,12 +14,13 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
 
 import leo.views as views
 from leo.views import exclusiveView, exclusiveDetailView
 from django.conf import settings
 from django.conf.urls.static import static
+from allauth.account import views as auth_views
 
 urlpatterns = [
     #login
@@ -38,7 +39,7 @@ urlpatterns = [
     path('newsletter/', views.newsletter, name = 'newsletter'),
     path('calendar/', views.calendar, name = 'calendar'),
     path('account/', views.account, name = 'account'),
-    #path('exclusive_content/', views.exclusive, name = 'exclusive'),
-    path('exclusive_content', exclusiveView.as_view(), name = 'exclusive'),
-    path('exclusive/<int:pk>', exclusiveDetailView.as_view(), name = 'exclusiveDetail'),
+    path('exclusive_content/', views.exclusive, name = 'exclusive'),
+    # path('exclusive_content', exclusiveView.as_view(), name = 'exclusive'),
+    # path('exclusive/<int:pk>', exclusiveDetailView.as_view(), name = 'exclusiveDetail'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

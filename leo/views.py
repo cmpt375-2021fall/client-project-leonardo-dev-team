@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import NewUserForm
+from .forms import MyCustomLoginForm, MyCustomSignupForm
 from django.contrib.auth import login
 from django.contrib import messages
 from django.views.generic import ListView, DetailView
