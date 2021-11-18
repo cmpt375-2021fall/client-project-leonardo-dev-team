@@ -53,6 +53,12 @@
         </header>
     </nav>
 
+        <div class ="settings">
+            <a href="{% url 'account' %}">
+                <img class = "settImg" src="{% static "leo/images/SettingsGear.png" %}">
+            </a>
+        </div>
+
         {% block content %}
 
         {% endblock %}
