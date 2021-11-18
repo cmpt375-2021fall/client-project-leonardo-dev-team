@@ -39,9 +39,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'leo.apps.LeoConfig',
-    'crispy_forms'
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 ]
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -106,6 +112,20 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED=True
+ACCOUNT_USERNAME_REQUIRED=False
+ACCOUNT_SESSION_REMEMBER = True
+ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL='dashboard'
+ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION=True
+ACCOUNT_LOGOUT_ON_GET=True
+ACCOUNT_EMAIL_VERIFICATION='mandatory'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+LOGIN_URL = 'account_login'
+LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -135,4 +155,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
