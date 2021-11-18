@@ -44,10 +44,10 @@
                     <a href="{{ url4 }}"{% if request.path == url4 %} class="active"{% endif %} style="font-weight: bold;">My Membership</a>
                     {% url 'exclusive' as url3 %}
                     <a href="{{ url3 }}"{% if request.path == url3 %} class="active"{% endif %} style="font-weight: bold;">Exclusive Content</a>
-                    {% url 'calendar' as url2 %}
-                    <a href="{{ url2 }}"{% if request.path == url2 %} class="active"{% endif %} style="font-weight: bold;">Calendar</a>
                     {% url 'newsletter' as url %}
                     <a href="{{ url }}"{% if request.path == url %} class="active"{% endif %} style="font-weight: bold;">Newsletter</a>
+                    {% url 'calendar' as url2 %}
+                    <a href="{{ url2 }}"{% if request.path == url2 %} class="active"{% endif %} style="font-weight: bold;">Calendar</a>
             </div>
         </div>
         </header>
