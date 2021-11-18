@@ -78,7 +78,7 @@ body {
 .login input[type="password"] {
   background: #fff;
   border-color: #bbb;
-    border-radius: 25px 25px 25px 25px;
+  border-radius: 25px 25px 25px 25px;
   color: #555;
 }
 
