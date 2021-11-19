@@ -18,7 +18,7 @@ footer{
     margin-top: auto;
 }
 
-img{
+.dashimg{
   border-radius: 5px 5px 0 0;
   display: block;
   margin-left: auto;
@@ -58,24 +58,38 @@ img{
 
 
 .containerCard {
-  position: relative;
-  background: #76C4D5;
-  overflow: hidden;
-  border-radius: 20px;
+  width: 200px;
+  height: 350px;
+  background-size: contain;
+  background-repeat:no-repeat;
+  background-color: #76C4D5;
   display: inline-block;
-  margin-bottom: 5px;
-  margin-top: 5px;
   padding: 10px;
+  border-radius: 20px;
+  filter: drop-shadow(3px 4px 0px #0090AA);
+  margin-bottom: 3rem;
+  overflow: hidden;
 }
-.containerCard p{
+.containerCard h5{
   display: inline-block;
-  margin-right: 1rem;
 }
 
+.containerCard p{
+  color: white;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.containerCard div{
+  margin-top: -10px;
+}
+
+
 .containerCard img{
-  height:100px;
-  width:auto;
-  padding: 1rem;
+  width: 200px;
+  height: 350px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
@@ -115,23 +129,12 @@ img{
   position: relative;
 }
 
-.settingsDash {
-  position: fixed;
-  border-radius: 50%;
-  border:solid 5px white;
-  overflow: hidden;
-  width: 50px;
-  height: 50px;
-  float: right;
-  right: 0;
-  margin-right: 2rem;
-  z-index: 10;
-}
 
 .settings {
   position: fixed;
   border-radius: 50%;
   border:solid 5px white;
+  filter: drop-shadow(3px 4px 0px grey);
   overflow: hidden;
   width: 50px;
   height: 50px;
