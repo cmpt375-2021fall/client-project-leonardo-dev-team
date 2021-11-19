@@ -1,48 +1,48 @@
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 
-from django.shortcuts import render
-
-from .models import Post
+from .models import Post, Calender
 
 
 @login_required
 def dashboard(request):
     context = {
+
     }
-    return render(request, 'dashboard/dashboard.html', context)
+    return render(request, 'dashboard.html', context)
 
 
 @login_required
 def newsletter(request):
     context = {}
-    return render(request, 'dashboard/newsletter.html', context)
+    return render(request, 'newsletter.html', context)
 
 
 @login_required
-def calendar(request):
+def account(request):
     context = {}
-    return render(request, 'dashboard/calendar.html', context)
+    return render(request, 'account.html', context)
 
 
 @login_required
-def profile(request):
+def member(request):
     context = {}
-    return render(request, 'dashboard/profile.html', context)
+    return render(request, 'membership.html', context)
 
 
-@login_required
-def exclusive(request):
-    context = {}
-    return render(request, 'dashboard/exclusive.html', context)
-
-
-class exclusiveView(ListView):
+class exclusiveView(LoginRequiredMixin, ListView):
     model = Post
-    template_name = 'dashboard/exclusive.html'
+    template_name = 'exclusive.html'
     ordering = ['-id']
 
 
-class exclusiveDetailView(DetailView):
+class exclusiveDetailView(LoginRequiredMixin, DetailView):
     model = Post
-    template_name = 'dashboard/exclusive_detail.html'
+    template_name = 'exclusive_detail.html'
+
+
+class calenderView(LoginRequiredMixin, ListView):
+    model = Calender
+    template_name = 'calendar.html'

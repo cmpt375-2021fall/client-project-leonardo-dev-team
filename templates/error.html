@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+
+    {% block content %}
+        {% load static %}
+        <div style="margin-top: 15rem;">
+            <div class="content">
+                <b><h1>404 Error:</h1></b>
+                <h1>Page Not Found</h1>
+                <img style="height: 600px; width: auto" src="{% static "leo/images/404 Icon.png" %}">
+                <a href="{% url 'dashboard' %}">Would you like to return home?</a>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 100px"></div>
+    {% endblock %}

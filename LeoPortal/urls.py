@@ -15,12 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path
-
-import leo.views as views
-from leo.views import exclusiveDetailView
 from django.conf import settings
 from django.conf.urls.static import static
 from allauth.account import views as auth_views
+
+import leo.views as views
 
 urlpatterns = [
     path('', auth_views.LoginView.as_view(template_name='account/login.html'), name='account_login'),
@@ -33,11 +32,13 @@ urlpatterns = [
     path("account/password/change/", auth_views.PasswordChangeView.as_view(template_name='account/password_change.html'), name="account_change_password"),
     re_path(r"^confirm-email/(?P<key>[-:\w]+)/$", auth_views.ConfirmEmailView.as_view(template_name='account/email_confirm.html'),name="account_confirm_email"),
     path('account/verification_sent/', auth_views.EmailVerificationSentView.as_view(template_name='account/verification_sent.html'),name="account_email_verification_sent"),
-    path('dashboard/', views.dashboard, name='dashboard'),
+    path('dashboard/', views.dashboard, name = 'dashboard'),
     path('admin/', admin.site.urls),
-    path('newsletter/', views.newsletter, name='newsletter'),
-    path('calendar/', views.calendar, name='calendar'),
-    path('profile/', views.profile, name='profile'),
-    path('exclusive_content/', views.exclusive, name='exclusive'),
-    path('exclusive/<int:pk>', exclusiveDetailView.as_view(), name='exclusiveDetail'),
+    path('newsletter/', views.newsletter, name = 'newsletter'),
+    path('calendar/', views.calenderView.as_view(), name = 'calendar'),
+    path('account/', views.account, name = 'account'),
+    path('exclusive_content/', views.exclusiveView.as_view(), name = 'exclusive'),
+    path('exclusive/<int:pk>', views.exclusiveDetailView.as_view(), name = 'exclusiveDetail'),
+    path('membership', views.member, name = 'membership'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

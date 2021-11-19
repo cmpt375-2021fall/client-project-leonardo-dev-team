@@ -11,8 +11,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import os
 from pathlib import Path
-from django.urls import reverse_lazy
-
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,9 +25,12 @@ SECRET_KEY = 'django-insecure-gsp^pvmg9u%*m5gp9n$kw9&m^!wl!_-v7-n@6x+(5)+*gs36&)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+SITE_ID = 1 # needed for django-allauth to work
+
 ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com', 'localhost']
 
-SITE_ID = 1 # needed for django-allauth to work
+
+# Application definition
 
 INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
@@ -45,7 +46,6 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
 ]
-
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
@@ -114,22 +114,24 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# django-allauth config
+
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_REQUIRED=True
 ACCOUNT_USERNAME_REQUIRED=False
-ACCOUNT_FORMS = {
-    'login': 'leo.forms.MyCustomLoginForm',
-    'signup': 'leo.forms.MyCustomSignupForm'
-}
 ACCOUNT_SESSION_REMEMBER = True
-# ACCOUNT_CONFIRM_EMAIL_ON_GET=True
 ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL='dashboard'
 ACCOUNT_LOGIN_ON_EMAIL_CONFIRMATION=True
 ACCOUNT_LOGOUT_ON_GET=True
 ACCOUNT_EMAIL_VERIFICATION='mandatory'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+ACCOUNT_FORMS = {
+    'login': 'leo.forms.MyCustomLoginForm',
+    'signup': 'leo.forms.MyCustomSignupForm'
+}
 
+
+LOGIN_URL = 'account_login'
+LOGIN_REDIRECT_URL = 'dashboard'
 
 
 # Internationalization
@@ -151,10 +153,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
-
-LOGIN_URL = 'account_login'
-LOGIN_REDIRECT_URL = reverse_lazy('dashboard')
-
 
 STATIC_ROOT = BASE_DIR / 'static_files'
 #MEDIA_ROOT = BASE_DIR / 'media'
