@@ -20,6 +20,7 @@
 }
 
 .inner {
+  padding-top: 5vw;
   padding-left: 3vw;
   padding-right: 3vw;
   flex: 1;
@@ -36,14 +37,29 @@
   justify-content: center;
 }
 
-.login-container {
-  width: 400px;
-  /*margin-top: 5vh;*/
-  margin-bottom: 5vh;
-  border-radius: 25px;
-  padding: 16px;
-  background-color: white;
-}
+
+  @media only screen and (max-width: 600px){
+    .login-container {
+      width: 85%;
+      /*margin-top: 5vh;*/
+      margin-bottom: 5vh;
+      border-radius: 25px;
+      padding: 16px;
+      background-color: white;
+    }
+
+  }
+
+  @media only screen and (min-width: 601px){
+    .login-container {
+      width: 400px;
+      /*margin-top: 5vh;*/
+      margin-bottom: 5vh;
+      border-radius: 25px;
+      padding: 16px;
+      background-color: white;
+    }
+  }
 
 .login-container input {
   border-radius: 25px;
