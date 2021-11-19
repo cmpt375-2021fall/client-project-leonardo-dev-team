@@ -1,19 +1,8 @@
-from django.shortcuts import render, redirect
-from .forms import MyCustomLoginForm, MyCustomSignupForm
-from django.contrib.auth import login
-from django.contrib import messages
-from django.views.generic import ListView, DetailView
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import render
+from django.views.generic import ListView, DetailView
 
-from django.contrib.auth import authenticate
-from django.shortcuts import render, redirect
-
-# register form
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from django.http import HttpResponse
-
-
-# Create your views here.
 from .models import Post, Calender
 
 
@@ -32,45 +21,28 @@ def newsletter(request):
 
 
 @login_required
-def calendar(request):
-    context = {}
-    return render(request, 'calendar.html', context)
-
-@login_required
 def account(request):
     context = {}
     return render(request, 'account.html', context)
 
+
+@login_required
 def member(request):
     context = {}
     return render(request, 'membership.html', context)
 
-def exclusive(request):
-    context = {}
-    return render(request, 'exclusive.html', context)
 
-@login_required
-class exclusiveView(ListView):
+class exclusiveView(LoginRequiredMixin, ListView):
     model = Post
     template_name = 'exclusive.html'
     ordering = ['-id']
 
-@login_required
-class exclusiveDetailView(DetailView):
+
+class exclusiveDetailView(LoginRequiredMixin, DetailView):
     model = Post
     template_name = 'exclusive_detail.html'
 
-class calenderView(ListView):
+
+class calenderView(LoginRequiredMixin, ListView):
     model = Calender
     template_name = 'calendar.html'
-'''
-def header(request):
-    context = {
-
-    }
-    return render(request, 'Header.html', context)
-
-def footer(request):
-    context = {}
-    return render(request, 'footer.html', context)
-'''

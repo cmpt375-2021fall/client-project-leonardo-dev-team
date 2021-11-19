@@ -15,15 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path
-
-import leo.views as views
-from leo.views import exclusiveView, exclusiveDetailView, calenderView
 from django.conf import settings
 from django.conf.urls.static import static
 from allauth.account import views as auth_views
 
+import leo.views as views
+
 urlpatterns = [
-    #login
     path('', auth_views.LoginView.as_view(template_name='account/login.html'), name='account_login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='account/logout.html'), name='account_logout'),
     path('signup/', auth_views.SignupView.as_view(template_name='account/register.html'), name='account_signup'),
@@ -37,12 +35,10 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name = 'dashboard'),
     path('admin/', admin.site.urls),
     path('newsletter/', views.newsletter, name = 'newsletter'),
-    #path('calendar/', views.calendar, name = 'calendar'),
-    path('calendar/', calenderView.as_view(), name = 'calendar'),
+    path('calendar/', views.calenderView.as_view(), name = 'calendar'),
     path('account/', views.account, name = 'account'),
-    #path('exclusive_content/', views.exclusive, name = 'exclusive'),
-    path('exclusive_content', exclusiveView.as_view(), name = 'exclusive'),
-    path('exclusive/<int:pk>', exclusiveDetailView.as_view(), name = 'exclusiveDetail'),
+    path('exclusive_content/', views.exclusiveView.as_view(), name = 'exclusive'),
+    path('exclusive/<int:pk>', views.exclusiveDetailView.as_view(), name = 'exclusiveDetail'),
     path('membership', views.member, name = 'membership'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
