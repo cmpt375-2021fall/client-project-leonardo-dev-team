@@ -14,18 +14,26 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
 
 import leo.views as views
 from leo.views import exclusiveView, exclusiveDetailView, calenderView
 from django.conf import settings
 from django.conf.urls.static import static
+from allauth.account import views as auth_views
 
 urlpatterns = [
     #login
-    path('', views.login_request),
-    path('register/', views.register_request, name='register'),
-    path('login/', views.login_request, name ='login_request'),
+    path('', auth_views.LoginView.as_view(template_name='account/login.html'), name='account_login'),
+    path('logout/', auth_views.LogoutView.as_view(template_name='account/logout.html'), name='account_logout'),
+    path('signup/', auth_views.SignupView.as_view(template_name='account/register.html'), name='account_signup'),
+    path('account/password/reset/', auth_views.PasswordResetView.as_view(template_name='account/password_reset.html'), name='account_reset_password'),
+    path('account/password/reset/done/', auth_views.PasswordResetDoneView.as_view(template_name='account/password_reset_done.html'), name='account_reset_password_done'),
+    re_path('^account/password/reset/key/(?P<uidb36>[0-9A-Za-z]+)-(?P<key>.+)/$', auth_views.PasswordResetFromKeyView.as_view(template_name='account/password_reset_from_key.html'), name='account_reset_password_from_key'),
+    path('account/password/reset/key/done/', auth_views.PasswordResetFromKeyDoneView.as_view(template_name='account/password_reset_from_key_done.html'), name='account_reset_password_from_key_done'),
+    path("account/password/change/", auth_views.PasswordChangeView.as_view(template_name='account/password_change.html'), name="account_change_password"),
+    re_path(r"^confirm-email/(?P<key>[-:\w]+)/$", auth_views.ConfirmEmailView.as_view(template_name='account/email_confirm.html'),name="account_confirm_email"),
+    path('account/verification_sent/', auth_views.EmailVerificationSentView.as_view(template_name='account/verification_sent.html'),name="account_email_verification_sent"),
     path('dashboard/', views.dashboard, name = 'dashboard'),
     path('admin/', admin.site.urls),
     path('newsletter/', views.newsletter, name = 'newsletter'),

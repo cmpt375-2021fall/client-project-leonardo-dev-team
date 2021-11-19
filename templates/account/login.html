@@ -1,0 +1,14 @@
+{% extends "account/base.html" %}
+{% block logincontent %}
+<h2>Sign in</h2>
+<form method="POST" action="{% url 'account_login' %}">
+{% csrf_token %}
+{{ form.as_p }}
+{% if redirect_field_value %}
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+{% endif %}
+<button type="submit">Submit</button>
+<a href="{{ signup_url }}">sign up</a>
+<a class="button secondaryAction" href="{% url 'account_reset_password' %}">"Forgot Password?"</a>
+</form>
+{% endblock %}
