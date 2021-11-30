@@ -7,7 +7,10 @@
 }
 
 /* Add rounded corners to the top left and the top right corner of the image */
+.content p{
+  font-size: 1rem;
 
+}
 body{
     min-height: 100vh;
     display: flex;
@@ -70,6 +73,7 @@ img{
 .containerCard p{
   display: inline-block;
   margin-right: 1rem;
+
 }
 
 .containerCard img{
