@@ -34,11 +34,11 @@ urlpatterns = [
     path('account/verification_sent/', auth_views.EmailVerificationSentView.as_view(template_name='account/verification_sent.html'),name="account_email_verification_sent"),
     path('dashboard/', views.dashboard, name = 'dashboard'),
     path('admin/', admin.site.urls),
-    path('newsletter/', views.newsletter, name = 'newsletter'),
+    path('newsletter/', views.newsletterView.as_view(), name = 'newsletter'),
     path('calendar/', views.calenderView.as_view(), name = 'calendar'),
     path('account/', views.account, name = 'account'),
     path('exclusive_content/', views.exclusiveView.as_view(), name = 'exclusive'),
     path('exclusive/<int:pk>', views.exclusiveDetailView.as_view(), name = 'exclusiveDetail'),
-    path('membership', views.member, name = 'membership'),
+    path('membership/', views.cardView.as_view(), name = 'membership'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

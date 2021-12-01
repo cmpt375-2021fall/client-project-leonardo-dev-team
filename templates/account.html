@@ -14,7 +14,7 @@
 
 
             <div class="content">
-
+                {% if user.is_authenticated %}
                 <div>
                     <div class="containerCard" style="margin-right: 10px; background-image: url('{% static 'leo/images/Pattern.png' %}');">
                         <img src="{% static "leo/images/Card Logo.png" %}">
@@ -69,13 +69,10 @@
 
                 <div class="ACCT info">
 
-                    <h3>Your Profile</h3><h3 style="font-weight: bold;font-size: 10px;"></h3>
+                    <h3>Your Profile</h3><h3 style="font-weight: bold;font-size: 10px;">{{ user.get_username }}</h3>
                     <hr style="color: white;">
-                    <h4>Account Number</h4>
-                    <p>1234567</p>
-                    <hr style="color: white">
                     <h4>Email</h4>
-                    <p>user@test.com</p>
+                    <p>{{ user.email }}</p>
                     <hr style="color: white">
                     <h4>Password</h4>
                     <p>**********</p>
@@ -130,6 +127,7 @@
                         </div>
                     </div>
                 </div>
+                {% endif %}
             </div>
         </div>
 

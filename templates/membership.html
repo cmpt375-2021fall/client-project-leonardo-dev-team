@@ -12,10 +12,11 @@
             <div class = "content">
                 <h1><b>Membership Cards</b></h1>
                 <div>
+                    {% if user.is_authenticated %}
                     <div class="containerCard" style="margin-right: 10px; background-image: url('{% static 'leo/images/Pattern.png' %}');">
                         <img src="{% static "leo/images/Card Logo.png" %}">
                         <div>
-                            <h5>Cardholder 1:</h5><p style="color: white">John Smith</p>
+                            <h5>Cardholder 1:</h5><p style="color: white">{{ user.get_username }}</p>
                         </div>
                         <div>
                             <h5>Lookup ID:</h5><p>7654321</p>
@@ -55,6 +56,7 @@
                         </div>
                     </div>
                 </div>
+                {% endif %}
             </div>
         </div>
     <div style="margin-bottom: 100px"></div>
