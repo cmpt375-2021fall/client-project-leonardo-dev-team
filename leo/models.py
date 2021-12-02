@@ -42,3 +42,30 @@ class MembershipInfo(models.Model):
     MemberID = models.CharField(max_length=255)
     MemberSince = models.CharField(max_length=255)
     ValidThrough = models.CharField(max_length=255)
+
+
+# Leave this at bottom of models.py
+def create_superuser_if_necessary():
+    # Set the name and initial password you want the superuser to have here.
+    # AFTER THIS SUPERUSER IS CREATED ON HEROKU, YOU ***MUST*** IMMEDIATELY CHANGE ITS PASSWORD
+    # THROUGH THE ADMIN INTERFACE. (This password is stored in cleartext in a GitHub repository,
+    # so it is not acceptable to use it when there is actual client data!)
+    SUPERUSER_NAME = 'admin'
+    SUPERUSER_PASSWORD = 'leo'
+
+    from django.contrib.auth.models import User
+
+    if not User.objects.filter(username=SUPERUSER_NAME).exists():
+        superuser = User(
+            username=SUPERUSER_NAME,
+            is_superuser=True,
+            is_staff=True
+        )
+
+        superuser.save()
+        superuser.set_password(SUPERUSER_PASSWORD)
+        superuser.save()
+
+
+# Once the superuser has been created on Heroku, you can comment out this line if you wish
+create_superuser_if_necessary()
