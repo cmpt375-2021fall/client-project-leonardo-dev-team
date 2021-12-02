@@ -6,7 +6,7 @@
         {% load static %}
         <div style="margin-top: 10rem;">
             <div class = "pic" style="margin-right: 25px; margin-left: 2rem; position: fixed">
-                <img style="height:100px; width:auto; margin-top: 25px;" src="{% static "leo/images/Wallet.png" %}">
+                <img style="height:100px; width:auto; margin-top: 25px;" src="{% static "leo/images/WalletFinal.png" %}">
             </div>
 
             <div class = "content">
@@ -14,7 +14,7 @@
                 <div>
                     {% if user.is_authenticated %}
                     <div class="containerCard" style="margin-right: 10px; background-image: url('{% static 'leo/images/Pattern.png' %}');">
-                        <img src="{% static "leo/images/Card Logo.png" %}">
+                        <img src="{% static "leo/images/Card LogoFinal.png" %}">
                         <div>
                             <h5>Cardholder 1:</h5><p style="color: white">{{ user.get_username }}</p>
                         </div>
@@ -35,7 +35,7 @@
                         </div>
                     </div>
                     <div class="containerCard" style="margin-right: 10px; background-image: url('{% static 'leo/images/Pattern.png' %}');">
-                        <img src="{% static "leo/images/Card Logo.png" %}">
+                        <img src="{% static "leo/images/Card LogoFinal.png" %}">
                         <div>
                             <h5>Cardholder 2:</h5><p style="color: white">John Smith</p>
                         </div>
