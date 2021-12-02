@@ -1,9 +1,9 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, View
 
-from .models import Post, Calender
+from .models import Post, Calender, Newsletter, MembershipInfo
 
 
 @login_required
@@ -42,7 +42,15 @@ class exclusiveDetailView(LoginRequiredMixin, DetailView):
     model = Post
     template_name = 'exclusive_detail.html'
 
+class newsletterView(LoginRequiredMixin, ListView):
+    model = Newsletter
+    template_name = 'newsletter.html'
+
 
 class calenderView(LoginRequiredMixin, ListView):
     model = Calender
     template_name = 'calendar.html'
+
+class cardView(LoginRequiredMixin, ListView):
+    model = MembershipInfo
+    template_name = 'membership.html'
