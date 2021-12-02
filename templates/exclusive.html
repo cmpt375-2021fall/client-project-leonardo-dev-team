@@ -29,10 +29,18 @@
                                     </div>
                                 {% endif %}
                             </div>
+                            {% if post.header_image %}
                             <div class = "centertext" style="display: inline-block; margin-left: 1em;">
                                 <p>{{ post.post_date }}</p>
                                 <p>{{ post.caption }}</p>
                             </div>
+                                {% else %}
+                                <div>
+                                <p>{{ post.post_date }}</p>
+                                <p>{{ post.caption }}</p>
+                            </div>
+                            {% endif %}
+
                             <br>
                             <br>
                             <div>

@@ -40,6 +40,8 @@
             </div>
 
             <div id = "button" class = "topnav-right">
+                    {% url 'account_logout' as url5 %}
+                    <a href="{{ url5 }}"{% if request.path == url4 %} class="active"{% endif %} style="font-weight: bold;">Logout</a>
                     {% url 'membership' as url4 %}
                     <a href="{{ url4 }}"{% if request.path == url4 %} class="active"{% endif %} style="font-weight: bold;">My Membership</a>
                     {% url 'exclusive' as url3 %}
@@ -68,6 +70,7 @@
             <div class = "footernav">
                 <hr style="margin-bottom: 15px; background-color: white; width: 90%;">
                 <p><a href="{% url 'dashboard' %}">Home</a></p>
+                <p><a href="{% url 'account_logout' %}">Logout</a></p>
                 <p><a href="#">Back to top</a></p>
                 <div style="margin-top: 50px"></div>
             </div>
