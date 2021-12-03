@@ -15,7 +15,7 @@
                     {% for news in object_list %}
                         <h3>{{ news.post_date }}</h3>
                         {% if news.header_image %}
-                            <img style="width: 80%" src="{{ news.header_image.url }}">
+                            <img class="imgSizeNews" src="{{ news.header_image.url }}">
                         {% endif %}
                         <div>
                             <h4>{{ news.title }}</h4>

@@ -37,7 +37,7 @@
 }
 
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1300px) {
     .mobile-nav{
         float: right;
     }
@@ -75,7 +75,7 @@
     }
 }
 
-@media only screen and (min-width: 1201px){
+@media only screen and (min-width: 1301px){
     .mobile-nav{
         display: none;
     }

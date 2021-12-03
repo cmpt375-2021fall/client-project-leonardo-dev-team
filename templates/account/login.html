@@ -7,8 +7,12 @@
 {% if redirect_field_value %}
     <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
 {% endif %}
-<button type="submit">Submit</button>
-<a href="{{ signup_url }}">sign up</a>
-<a class="button secondaryAction" href="{% url 'account_reset_password' %}">"Forgot Password?"</a>
+<div style="margin-bottom: 1rem; text-align: left; margin-left: 1rem">
+    <a class="button secondaryAction" href="{% url 'account_reset_password' %}">Forgot Password?</a>
+</div>
+<button type="submit">Login</button>
+<div style="margin-top: 1rem">
+    <a href="{{ signup_url }}">New to The Lounge? Create Account</a>
+</div>
 </form>
 {% endblock %}

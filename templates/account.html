@@ -65,11 +65,12 @@
                     <h1><b>My Membership</b></h1>
                 </div>
 
-                <hr style="height:4px; width:600px; border:none; color: black; background-color: black;">
+                <hr style="height:4px; border:none; color: black; background-color: black;">
 
                 <div class="ACCT info">
 
-                    <h3>Your Profile</h3><h3 style="font-weight: bold;font-size: 10px;">{{ user.get_username }}</h3>
+                    <h3>Your Profile</h3>
+                    <p>{{ user.get_username }}</p>
                     <hr style="color: white;">
                     <h4>Email</h4>
                     <p>{{ user.email }}</p>
@@ -86,8 +87,8 @@
 
                 <div class="Name of Membership Type" style="font-weight: bolder;">
                     <div style="background-color: white; padding: 1rem;">
-                        <h3>Name of Membership Type</h3>
-                        <a>Membership Description</a><a style="font-weight: lighter;"></a>
+                        <h3>Membership Type: Basic</h3>
+                        <a>Full Access to the Member Benefits</a><a style="font-weight: lighter;"></a>
                         <!--Need to add little blue box here (left side)-->
                     </div>
                 </div>
@@ -102,8 +103,8 @@
                             <img style="height:75px; width:auto;margin-left:30px;" src="{% static "leo/images/Newsletter.png" %}">
                         </div>
                         <div style="flex-grow: 1">
-                            <h4><a href = "{% url 'newsletter' %}" ><b>Newsletter</b></a></h4>
-                            <p>Some Description</p>
+                            <a class="accountA" href = "{% url 'newsletter' %}" ><h4><b>Newsletter</b></a></h4>
+                            <p>You can find all of our most important updates on our newsletter.</p>
                         </div>
                     </div>
                     <hr style="color: white">
@@ -112,8 +113,8 @@
                             <img style="height:75px; width:auto;margin-left:30px;" src="{% static "leo/images/Calendar (1).png" %}">
                         </div>
                         <div style="flex-grow: 1">
-                            <h4><a href="{% url 'calendar' %}"><b>Calendar</b></a></h4>
-                            <p>Some Description</p>
+                            <a class="accountA" href="{% url 'calendar' %}"><h4><b>Calendar</b></a></h4>
+                            <p>Visit the calendar to find new events and exhibits.</p>
                         </div>
                     </div>
                     <hr style="color: white">
@@ -122,8 +123,8 @@
                             <img style="height:75px; width:auto;margin-left:30px;" src="{% static "leo/images/Asset 8.png" %}">
                         </div>
                         <div style="flex-grow: 1">
-                            <h4><a href="{% url 'exclusive' %}"><b>Exclusive Content</b></a></h4>
-                            <p>Some Description</p>
+                            <a class="accountA" href="{% url 'exclusive' %}"><h4><b>Exclusive Content</b></a></h4>
+                            <p>As a member, you get access to exclusive content, which you can find here.</p>
                         </div>
                     </div>
                 </div>
