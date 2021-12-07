@@ -53,7 +53,6 @@ def create_superuser_if_necessary():
     SUPERUSER_NAME = 'admin'
     SUPERUSER_PASSWORD = 'leo'
 
-    from django.contrib.auth.models import User
 
     if not User.objects.filter(username=SUPERUSER_NAME).exists():
         superuser = User(
@@ -68,4 +67,4 @@ def create_superuser_if_necessary():
 
 
 # Once the superuser has been created on Heroku, you can comment out this line if you wish
-#create_superuser_if_necessary()
+create_superuser_if_necessary()
