@@ -66,4 +66,4 @@ def create_superuser_if_necessary():
 
 
 # Once the superuser has been created on Heroku, you can comment out this line if you wish
-create_superuser_if_necessary()
+#create_superuser_if_necessary()
