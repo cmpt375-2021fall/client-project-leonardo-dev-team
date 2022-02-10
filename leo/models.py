@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib.auth.models import User
 from datetime import date, datetime
 
-
 class Post(models.Model):
     title = models.CharField(max_length=255)
     header_image = models.ImageField(null=True, blank=True, upload_to="exclusiveImages/")
